@@ -11,7 +11,9 @@
     border-radius: 12px !important;
 }
 
-button {
+
+button{
+
     margin-right: 8px;
     background-color: rgb(0, 114, 177);
     border-color: rgb(0, 114, 177);
@@ -21,7 +23,9 @@ button {
     margin-right: 8px !important;
 }
 
-@media screen and ( max-width: 1220px) {
+
+@media screen and ( max-width: 1220px ){
+
     .profile-pic {
         height: 8.5rem;
         width: 8.5rem;
@@ -36,21 +40,3 @@ button {
 }
 
 
-/* .message-button {
-    margin-right: 1rem;
-    border-radius: 21px !important;
-    padding: 0rem !important;
-    width: 13%;
-    background-color: #0072b1 !important;
-    border-color: #0072b1 !important;
-}
-
-.more-button {
-    background-color: white !important;
-    border-color: white !important;
-    border-radius: 21px !important;
-    padding: 0rem !important;
-    color: gray !important;
-    border: 1px solid gray !important;
-    width: 13%;
-} */
