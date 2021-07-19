@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./App.css";
 
 function App() {
@@ -5,6 +6,18 @@ function App() {
     <div className="App">
       <div></div>
     </div>
+=======
+import './App.css';
+import Sidebar  from './components/Sidebar'
+
+function App() {
+  return (
+    <>
+      <div className="App">
+        <Sidebar />
+      </div>
+    </>
+>>>>>>> development
   );
 }
 
