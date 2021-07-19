@@ -77,6 +77,21 @@ footer select:hover {
   border: 2px solid #00000099;
 }
 
+footer select:focus {
+  border: none;
+  box-shadow: 0 0 5px #0a66c2;
+}
+
+footer select:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 5px #0a66c2;
+}
+
+footer select option {
+  background-color: white;
+}
+
 footer a.dropdown-item {
   padding: 5px 10px;
   font-size: 12px;
