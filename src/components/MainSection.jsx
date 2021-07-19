@@ -78,6 +78,9 @@ const MainSection = () => {
           </Card>
         </Col>
       </Row>
+      <Row className="justify-content-center">
+        
+      </Row>
     </Container>
   );
 };
