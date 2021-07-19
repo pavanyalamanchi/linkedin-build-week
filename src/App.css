@@ -22,11 +22,11 @@ div.row.footer-logo img {
   height: 1.5rem;
 }
 
-div.col-md-2 {
+footer div.col-md-2 {
   padding: 0;
 }
 
-p,
+footer p,
 span,
 label {
   font-size: 12px;
@@ -35,19 +35,19 @@ label {
   font-weight: 600;
 }
 
-p:hover {
+footer p:hover {
   color: #0a66c2;
   text-decoration: underline;
   cursor: pointer;
 }
 
-h6:hover {
+footer h6:hover {
   color: #0a66c2;
   text-decoration: underline;
   cursor: pointer;
 }
 
-h6 {
+footer h6 {
   font-size: 14px;
   margin: 0;
 }
@@ -77,14 +77,14 @@ footer select:hover {
   border: 2px solid #00000099;
 }
 
-a.dropdown-item {
+footer a.dropdown-item {
   padding: 5px 10px;
   font-size: 12px;
   color: #00000099;
   font-weight: 500;
 }
 
-button#dropdown-basic {
+footer button#dropdown-basic {
   background-color: #f3f2ee;
   color: #00000099;
   font-size: 12px;
@@ -94,17 +94,17 @@ button#dropdown-basic {
   padding: 0;
 }
 
-button#dropdown-basic:hover {
+footer button#dropdown-basic:hover {
   color: #0a66c2;
   text-decoration: underline;
   cursor: pointer;
 }
 
-button#dropdown-basic:focus {
+footer button#dropdown-basic:focus {
   box-shadow: none;
 }
 
-div.dropdown {
+footer div.dropdown {
   display: flex;
   align-items: baseline;
 }
