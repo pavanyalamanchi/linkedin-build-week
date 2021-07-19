@@ -1,23 +1,15 @@
-<<<<<<< HEAD
-import "./App.css";
-
-function App() {
-  return (
-    <div className="App">
-      <div></div>
-    </div>
-=======
 import './App.css';
 import Sidebar  from './components/Sidebar'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <>
       <div className="App">
         <Sidebar />
+        <Footer />
       </div>
     </>
->>>>>>> development
   );
 }
 
