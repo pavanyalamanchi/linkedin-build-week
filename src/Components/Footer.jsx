@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { Row, Col, Dropdown } from "react-bootstrap";
 
 const Footer = () => {
-  const [dropdown, setDropdown] = useState(false);
+  
   return (
     <footer>
       <Row className="footer-logo">
@@ -16,16 +15,6 @@ const Footer = () => {
         <Col md={2}>
           <p>About</p>
           <p>Community Guidelines</p>
-
-          <Dropdown.Menu
-            style={dropdown ? "{display: 'absolute'}" : "{display: 'none'}"}
-          >
-            <Dropdown.Item href="#">Privacy Policy</Dropdown.Item>
-            <Dropdown.Item href="#">User Agreement</Dropdown.Item>
-            <Dropdown.Item href="#">Cookie Policy</Dropdown.Item>
-            <Dropdown.Item href="#">Copyright Policy</Dropdown.Item>
-          </Dropdown.Menu>
-
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Privacy & Terms
