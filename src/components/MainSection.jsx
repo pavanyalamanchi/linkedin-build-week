@@ -33,7 +33,7 @@ const MainSection = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className="main-body-container">
       <Row className="justify-content-center">
         <Col sm={8} className="user-info mt-2">
           <Card>
@@ -48,7 +48,7 @@ const MainSection = () => {
                   <div className="d-flex mt-3">
                     <h2 className="member-name">
                       {profileData.name} {profileData.surname}{" "}
-                      <span>. 1st</span>
+                      <span>• 1st</span>
                     </h2>
                   </div>
                   <div>
@@ -56,19 +56,19 @@ const MainSection = () => {
                   </div>
                   <div className="d-flex">
                     <p className="text-muted">
-                      {profileData.area} .
+                      {profileData.area} ·
                       <a
                         href=".sample"
                         alt="#"
                         className="profile-contact-info"
                       >
-                        Contact Info
+                        {""} Contact Info
                       </a>
                     </p>
                   </div>
                 </Col>
 
-                <Col className="col d-flex justify-content-center">
+                <Col className="col d-flex profile-company-images">
                   <ListGroup variant="flush" className="mt-3">
                     <ListGroup.Item>
                       <SiTesla className='svg-margin' />
@@ -85,7 +85,7 @@ const MainSection = () => {
               <div>
                 <a
                   href="./sample"
-                  className='connections'
+                  className='profile-connections'
                 >
                   500+ Connections
                 </a>
@@ -108,7 +108,7 @@ const MainSection = () => {
 
           <Card>
             <Card.Body>
-              <h3>About</h3>
+              <h5 className="profile-body-section-header" >About</h5>
               <p>
                 {profileData.bio}
               </p>
@@ -117,7 +117,7 @@ const MainSection = () => {
 
           <Card>
             <Card.Body>
-              <h3>Activity</h3>
+              <h5>Activity</h5>
               <div>
                 <span className='activity-followers'>
                   1,844 followers
@@ -241,14 +241,16 @@ const MainSection = () => {
                 size="lg"
                 style={{ width: "100%" }}
               >
-                See all activity
+                <p>See all activity</p>
               </Button>
             </Card.Body>
           </Card>
         </Col>
+        
         <Col sm={4}>
           <Sidebar />
         </Col>
+        
       </Row>
       <Row className="justify-content-center"></Row>
     </Container>
