@@ -130,7 +130,7 @@ const ProfileEdit = (props) => {
                     className="input-value-bottom"
                     type="email"
                     placeholder="Location"
-                    value={props.country.split(',')[1]}
+                    value={"props.country.split(',')[1]"}
                     required
                   />
                 </Form.Group>
@@ -141,7 +141,7 @@ const ProfileEdit = (props) => {
                     className="input-value-bottom"
                     type="email"
                     placeholder="Locations"
-                    value={props.country.split(',')[0]}
+                    value={"props.country.split(',')[0]"}
                   />
                 </Form.Group>
 
