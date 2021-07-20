@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form, Row, Col, Modal, Button } from "react-bootstrap";
 
-const AddForm = () => {
+const AddForm = (props) => {
   const [form, setForm] = useState({
     title: "",
     employmentType: "",
@@ -22,10 +22,36 @@ const AddForm = () => {
       [key]: value,
     });
   };
+  
+  const submitForm = () => {
+    //Validations
+    console.log()
+    try {
+      alert("Works!")
+      const post = fetch(`https://striveschool-api.herokuapp.com/api/profile/:userId/experiences`, {
+        header: {
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
+        },
+        method: 'POST',
+        body: {
+          role: form.title,
+          company: form.company,
+          startDate: form.start,
+          endDate: form.end,
+          description: form.description,
+          area: form.location,
+        }
+      })
+    } catch {
+      
+    }
+  }
+  
+  
 
   return (
     <>
-      <div className="container-form">
+      <Form className="container-form" onSubmit={submitForm}>
         <Form.Group className="w-100">
           <Form.Label>Title *</Form.Label>
           <Form.Control
@@ -87,7 +113,7 @@ const AddForm = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
             type="checkbox"
-            label="I am currently working in this role"
+            label=" I am currently working in this role"
             onClick={() => {
               setWorking(!working);
             }}
@@ -282,7 +308,9 @@ const AddForm = () => {
           />
         </Form.Group>
         {console.log(form)}
-      </div>
+        
+        <Button type="submit">Save</Button>
+      </Form>
     </>
   );
 };

@@ -22,9 +22,6 @@ function AddExperience(props) {
       <Modal.Body>
         <AddForm />
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Save</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
