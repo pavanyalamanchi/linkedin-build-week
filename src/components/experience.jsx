@@ -22,9 +22,6 @@ function AddExperience(props) {
       <Modal.Body>
         <AddForm />
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
@@ -50,8 +47,8 @@ function EditExperience(props) {
           consectetur ac, vestibulum at eros.
         </p>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+      <Modal.Footer className="position-absolute bottom-0">
+        <Button onClick={props.onHide}>Save</Button>
       </Modal.Footer>
     </Modal>
   );

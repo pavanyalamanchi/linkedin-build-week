@@ -4,10 +4,10 @@
   height: fit-content;
   background-color: #f3f2ee;
 }
-.icons{
+.icons {
   font-size: x-large;
 }
-.body-title{
+.body-title {
   font-size: 24px;
   font-weight: 400;
 }
@@ -24,92 +24,87 @@
   border-radius: 12px !important;
   margin-bottom: 15px;
 }
-.user-info-body{
+.user-info-body {
   padding-top: 50px !important;
   padding-left: 25px !important;
 }
 
-
-button{
-
+button {
   margin-right: 8px;
   background-color: rgb(0, 114, 177);
   border-color: rgb(0, 114, 177);
   height: 35px;
-  padding: .3rem 1.2rem !important;
+  padding: 0.3rem 1.2rem !important;
   font-weight: 500;
   margin-right: 8px !important;
 }
-.member-name{
+.member-name {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 5px;
 }
-.cover-image{
+.cover-image {
   height: 200px;
   overflow: hidden;
 }
-.member-position{
+.member-position {
   font-size: 15px;
   font-weight: 400;
   margin-bottom: 5px;
 }
-p{padding: 0px !important; 
-margin:0px !important}
-.member-name span{
+p {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.member-name span {
   font-size: 12px;
 }
-.activity-item-title{
-  font-size: 16px;
+.activity-item-title {
+  font-size: 10px;
   line-height: 6px;
 }
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .cover-image {
-      height: 100px;
-      overflow: hidden;
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .cover-image {
+    height: 100px;
+    overflow: hidden;
   }
-  .activity-item-title{
+  .activity-item-title {
     font-size: 10px;
     line-height: 10px;
   }
 }
-@media screen and ( max-width: 1220px ){
+@media screen and (max-width: 1220px) {
   .profile-pic {
-      height: 8.5rem;
-      width: 8.5rem;
-      margin-top: 30px;
-      position: absolute;
-      border: 4px solid white !important;
-      margin-left: 2rem;
+    height: 8.5rem;
+    width: 8.5rem;
+    margin-top: 30px;
+    position: absolute;
+    border: 4px solid white !important;
+    margin-left: 2rem;
   }
   .cover-img {
-      height: 100px;
+    height: 100px;
   }
-  .user-info-body{
-      padding-top: 60px !important;
+  .user-info-body {
+    padding-top: 60px !important;
   }
-  .user-info{
-      padding: 0px;
+  .user-info {
+    padding: 0px;
   }
-  
 }
-@media screen and ( max-width: 500px ){
- 
-  .user-info{
-      padding: 0px !important;
+@media screen and (max-width: 500px) {
+  .user-info {
+    padding: 0px !important;
   }
   .cover-image {
     height: 100px;
     overflow: hidden;
-}
-.activity-item-title{
-  font-size: 10px;
-  line-height: 10px;
-}
+  }
+  .activity-item-title {
+    font-size: 10px;
+    line-height: 10px;
+  }
 }
 
 /* FOOTER */
@@ -137,7 +132,7 @@ footer p,
 span,
 label {
   font-size: 12px;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.6rem !important;
   color: #00000099;
   font-weight: 600;
 }
@@ -229,4 +224,91 @@ footer button#dropdown-basic:focus {
 footer div.dropdown {
   display: flex;
   align-items: baseline;
+}
+
+button.dropdown-toggle.btn.btn-success#dropdown-basic {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 18px !important;
+  margin-bottom: 0.6rem !important;
+}
+
+/* MODAL */
+
+div.modal-content {
+  height: 80vh;
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+
+div.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+div.modal-body {
+  overflow: scroll;
+  padding-bottom: 3.2rem;
+}
+
+button.close span {
+  font-size: 2rem;
+}
+
+button.close {
+  padding: 0 !important;
+}
+
+label.form-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+p.under-text {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #00000099;
+}
+
+p.learn-more {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0a7dd3;
+}
+
+p.learn-more:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+div.form-group select {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  height: 2rem;
+  color: #495057;
+}
+
+select.start,
+select.end {
+  width: 50%;
+}
+
+input.form-check-input {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+label.form-check-label {
+  margin-left: 0.5rem;
+}
+
+div.modal-footer {
+  position: fixed;
+  bottom: 10.5%;
+  left: 24%;
+  right: 25%;
+  width: 50%;
+  background-color: white;
 }

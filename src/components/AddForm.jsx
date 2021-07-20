@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Row, Col, Modal, Button } from "react-bootstrap";
 
 const AddForm = () => {
   const [form, setForm] = useState({
@@ -12,6 +12,7 @@ const AddForm = () => {
     industry: "",
     headline: "",
     description: "",
+    upload: "",
   });
   const [working, setWorking] = useState(false);
   const [headline, setHeadline] = useState(false);
@@ -25,7 +26,7 @@ const AddForm = () => {
 
   return (
     <>
-      <div className="container-form">
+      <Form className="container-form">
         <Form.Group className="w-100">
           <Form.Label>Title *</Form.Label>
           <Form.Control
@@ -94,79 +95,19 @@ const AddForm = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Label>Start Date *</Form.Label>
-          <select
-            value={form.start.month}
-            onChange={(e) => {
-              setForm({
-                ...form,
-                start: { ...form.start, month: e.target.value },
-              });
-            }}
-          >
-            <option>Month</option>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
-          </select>
-
-          <select
-            value={form.start.year}
-            onChange={(e) => {
-              setForm({
-                ...form,
-                start: { ...form.start, year: e.target.value },
-              });
-            }}
-          >
-            <option>Year</option>
-            <option>2021</option>
-            <option>2020</option>
-            <option>2019</option>
-            <option>2018</option>
-            <option>2017</option>
-            <option>2016</option>
-            <option>2015</option>
-            <option>2014</option>
-            <option>2013</option>
-            <option>2012</option>
-            <option>2011</option>
-            <option>2010</option>
-            <option>2009</option>
-            <option>2008</option>
-            <option>2007</option>
-            <option>2006</option>
-            <option>2005</option>
-            <option>2004</option>
-            <option>2003</option>
-            <option>2002</option>
-            <option>2001</option>
-            <option>2000</option>
-          </select>
-
-          <Form.Label>End Date</Form.Label>
-          {working ? (
-            <span>Present</span>
-          ) : (
-            <>
+        <Row>
+          <Col xs={6}>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Label>Start Date *</Form.Label> <br />
               <select
-                value={form.end.month}
+                value={form.start.month}
                 onChange={(e) => {
                   setForm({
                     ...form,
-                    end: { ...form.end, month: e.target.value },
+                    start: { ...form.start, month: e.target.value },
                   });
                 }}
+                className="start"
               >
                 <option>Month</option>
                 <option>January</option>
@@ -183,13 +124,14 @@ const AddForm = () => {
                 <option>December</option>
               </select>
               <select
-                value={form.end.year}
+                value={form.start.year}
                 onChange={(e) => {
                   setForm({
                     ...form,
-                    end: { ...form.end, year: e.target.value },
+                    start: { ...form.start, year: e.target.value },
                   });
                 }}
+                className="start"
               >
                 <option>Year</option>
                 <option>2021</option>
@@ -215,9 +157,78 @@ const AddForm = () => {
                 <option>2001</option>
                 <option>2000</option>
               </select>
-            </>
-          )}
-        </Form.Group>
+            </Form.Group>
+          </Col>
+          <Col xs={6}>
+            <Form.Group>
+              <Form.Label>End Date</Form.Label> <br />
+              {working ? (
+                <span>Present</span>
+              ) : (
+                <>
+                  <select
+                    value={form.end.month}
+                    onChange={(e) => {
+                      setForm({
+                        ...form,
+                        end: { ...form.end, month: e.target.value },
+                      });
+                    }}
+                    className="end"
+                  >
+                    <option>Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                  </select>
+                  <select
+                    value={form.end.year}
+                    onChange={(e) => {
+                      setForm({
+                        ...form,
+                        end: { ...form.end, year: e.target.value },
+                      });
+                    }}
+                    className="end"
+                  >
+                    <option>Year</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+                    <option>2009</option>
+                    <option>2008</option>
+                    <option>2007</option>
+                    <option>2006</option>
+                    <option>2005</option>
+                    <option>2004</option>
+                    <option>2003</option>
+                    <option>2002</option>
+                    <option>2001</option>
+                    <option>2000</option>
+                  </select>
+                </>
+              )}
+            </Form.Group>
+          </Col>
+        </Row>
 
         <Form.Group>
           <Form.Label>Industry *</Form.Label> <br />
@@ -271,8 +282,28 @@ const AddForm = () => {
             }}
           />
         </Form.Group>
+
+        <Form.Group controlId="formFile" className="mb-3">
+          <Form.Label>
+            Media <br />
+            Add or link to external documents, photos, sites, videos, and
+            presentations.
+          </Form.Label>
+          <Form.Control
+            type="file"
+            value={form.upload}
+            onChange={(e) => {
+              handleInput("upload", e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Modal.Footer>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Modal.Footer>
         {console.log(form)}
-      </div>
+      </Form>
     </>
   );
 };
