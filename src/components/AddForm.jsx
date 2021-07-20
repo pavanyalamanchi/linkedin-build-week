@@ -12,7 +12,6 @@ const AddForm = (props) => {
     industry: "",
     headline: "",
     description: "",
-    upload: "",
   });
   const [working, setWorking] = useState(false);
   const [headline, setHeadline] = useState(false);
@@ -24,14 +23,14 @@ const AddForm = (props) => {
     });
   };
   
-  const submitForm = () => {
+  const submitForm = (e) => {
     //Validations
+    e.preventDefault()
     console.log()
     try {
-      alert("Works!")
       const post = fetch(`https://striveschool-api.herokuapp.com/api/profile/:userId/experiences`, {
         header: {
-          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
         },
         method: 'POST',
         body: {
@@ -43,8 +42,9 @@ const AddForm = (props) => {
           area: form.location,
         }
       })
-    } catch {
-      
+      alert("Works!")
+    } catch (error) {
+      console.log(error)
     }
   }
   
@@ -52,7 +52,7 @@ const AddForm = (props) => {
 
   return (
     <>
-      <Form className="container-form" onSubmit={submitForm}>
+      <Form className="container-form" onSubmit={(e) => submitForm(e)}>
         <Form.Group className="w-100">
           <Form.Label>Title *</Form.Label>
           <Form.Control
@@ -308,27 +308,9 @@ const AddForm = (props) => {
             }}
           />
         </Form.Group>
-
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>
-            Media <br />
-            Add or link to external documents, photos, sites, videos, and
-            presentations.
-          </Form.Label>
-          <Form.Control
-            type="file"
-            value={form.upload}
-            onChange={(e) => {
-              handleInput("upload", e.target.value);
-            }}
-          />
-        </Form.Group>
-        <Modal.Footer>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Modal.Footer>
         {console.log(form)}
+        
+        <Button type="submit">Save</Button>
       </Form>
     </>
   );
