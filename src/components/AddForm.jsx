@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form, Row, Col, Modal, Button } from "react-bootstrap";
 
 const AddForm = () => {
   const [form, setForm] = useState({
@@ -12,6 +12,7 @@ const AddForm = () => {
     industry: "",
     headline: "",
     description: "",
+    upload: "",
   });
   const [working, setWorking] = useState(false);
   const [headline, setHeadline] = useState(false);
@@ -25,7 +26,7 @@ const AddForm = () => {
 
   return (
     <>
-      <div className="container-form">
+      <Form className="container-form">
         <Form.Group className="w-100">
           <Form.Label>Title *</Form.Label>
           <Form.Control
@@ -281,8 +282,28 @@ const AddForm = () => {
             }}
           />
         </Form.Group>
+
+        <Form.Group controlId="formFile" className="mb-3">
+          <Form.Label>
+            Media <br />
+            Add or link to external documents, photos, sites, videos, and
+            presentations.
+          </Form.Label>
+          <Form.Control
+            type="file"
+            value={form.upload}
+            onChange={(e) => {
+              handleInput("upload", e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Modal.Footer>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Modal.Footer>
         {console.log(form)}
-      </div>
+      </Form>
     </>
   );
 };

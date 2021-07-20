@@ -132,7 +132,7 @@ footer p,
 span,
 label {
   font-size: 12px;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.6rem !important;
   color: #00000099;
   font-weight: 600;
 }
@@ -226,17 +226,31 @@ footer div.dropdown {
   align-items: baseline;
 }
 
+button.dropdown-toggle.btn.btn-success#dropdown-basic {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 18px !important;
+  margin-bottom: 0.6rem !important;
+}
+
+/* MODAL */
+
 div.modal-content {
   height: 80vh;
   width: 90%;
-  overflow: scroll;
   margin: auto;
+  position: relative;
 }
 
 div.modal-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+div.modal-body {
+  overflow: scroll;
+  padding-bottom: 3.2rem;
 }
 
 button.close span {
@@ -284,5 +298,17 @@ select.end {
 input.form-check-input {
   width: 1.2rem;
   height: 1.2rem;
-  margin-right: 0.5rem;
+}
+
+label.form-check-label {
+  margin-left: 0.5rem;
+}
+
+div.modal-footer {
+  position: fixed;
+  bottom: 10.5%;
+  left: 24%;
+  right: 25%;
+  width: 50%;
+  background-color: white;
 }
