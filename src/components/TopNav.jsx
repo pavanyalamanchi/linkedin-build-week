@@ -69,13 +69,13 @@ import {
                       className="elon d-none d-sm-block"
                     />
                   </Nav>
-                  <div className="vl ml-1"></div>
+                  <div className="vl ml-1 d-none d-sm-block"></div>
                   <Nav.Link href="#pricing" style={{ color: "gray" }}>
                     <RiDashboardFill className="nav-icon" />
                     <br />
                     <span>Work</span>
                   </Nav.Link>
-                  <p className="premium">
+                  <p className="premium d-none d-sm-block">
                     Try Premium Free <br /> For 1 Month
                   </p>
                 </Navbar>

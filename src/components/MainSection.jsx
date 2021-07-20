@@ -69,7 +69,7 @@ const MainSection = () => {
                     </div>
                     <div className="col-md-10">
                       <div className="card-body">
-                        <h5 className="" style={{fontSize: "16px", lineHeight:"5px"}}>Simulation gear reducer</h5>
+                        <h5 className="activity-item-title">Simulation gear reducer</h5>
                         <p className="card-text">Elon Musk shared this  </p>
                         <p className="card-text"><small class="text-muted">3 React</small><small class="text-muted">1 Comment</small></p>
                       </div>
@@ -83,7 +83,7 @@ const MainSection = () => {
                     </div>
                     <div className="col-md-10">
                       <div className="card-body">
-                        <h5 className="" style={{fontSize: "16px", lineHeight:"5px"}}>Simulation gear reducer</h5>
+                        <h5 className="activity-item-title" >Simulation gear reducer</h5>
                         <p className="card-text">Elon Musk shared this  </p>
                         <p className="card-text"><small class="text-muted">3 React</small><small class="text-muted">1 Comment</small></p>
                       </div>
@@ -99,7 +99,7 @@ const MainSection = () => {
                     </div>
                     <div className="col-md-10">
                       <div className="card-body">
-                        <h5 className="" style={{fontSize: "16px", lineHeight:"5px"}}>Simulation gear reducer</h5>
+                        <h5 className="activity-item-title">Simulation gear reducer</h5>
                         <p className="card-text">Elon Musk shared this  </p>
                         <p className="card-text"><small class="text-muted">3 React</small><small class="text-muted">1 Comment</small></p>
                       </div>
@@ -113,7 +113,7 @@ const MainSection = () => {
                     </div>
                     <div className="col-md-10">
                       <div className="card-body">
-                        <h5 className="" style={{fontSize: "16px", lineHeight:"5px"}}>Simulation gear reducer</h5>
+                        <h5 className="activity-item-title">Simulation gear reducer</h5>
                         <p className="card-text">Elon Musk shared this  </p>
                         <p className="card-text"><small class="text-muted">3 React</small><small class="text-muted">1 Comment</small></p>
                       </div>
