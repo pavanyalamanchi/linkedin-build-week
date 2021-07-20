@@ -27,6 +27,10 @@
                 border: 1px solid white !important;
             }
             
+            .edit-button {
+                border-radius: 20px !important;
+            }
+            
             .list-group-flush {
                 margin-top: 0;
             }
