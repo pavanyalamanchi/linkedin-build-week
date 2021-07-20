@@ -75,7 +75,7 @@ const MainSection = () => {
                   </div>
                 </Col>
 
-                <Col className="col d-flex profile-company-images">
+                <Col className="col d-flex profile-company-images justify-content-center">
                   <ListGroup variant="flush" className="mt-3">
                     <ListGroup.Item className='list-border'>
                       <SiTesla className="svg-margin" />
