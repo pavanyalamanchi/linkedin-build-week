@@ -1,298 +1,270 @@
 .profile-pic {
-    height: 10.5rem;
-    width: 10.5rem;
-    position: absolute;
-    border: 4px solid white !important;
-    margin-top: 6rem;
-    margin-left: 2rem;
+  height: 10.5rem;
+  width: 10.5rem;
+  position: absolute;
+  border: 4px solid white !important;
+  margin-top: 6rem;
+  margin-left: 2rem;
 }
 
 .profile-contact-info {
-    text-decoration: none;
-    font-weight: 600;
-    color: #004182;
+  
 }
 
-.list-group-item {
-    border: 1px solid white !important;
+.profile-connections {
+  position: relative;
+  bottom: 10px;
 }
 
-.connections {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: medium;
-    color: #004182;
-}
-
-.svg-margin {
-    margin-right: 0.8rem;
-}
-
-.profile-button-margin {
-    margin-top: 0.8rem;
-}
-
-.open-to {
-    background-color: #004182 !important;
-    border-color: #004182 !important;
-}
-
-.activity-followers {
-    color: #0a66c2;
-    font-weight: 500;
-}
-
-.activity-image {
-    height: 60px;
-    width: 60px !important;
-}
-
-.activity-body-header {
-    font-size: 16px;
-    line-height: 5px;
-}
-
-.activity-border {
-    border: 1px solid white !important;
+.list-group-flush {
+  margin-top: 0;
 }
 
 .card {
-    border-radius: 12px !important;
-}
+  border-radius: 12px !important;
+} 
 
 .App {
-    width: 100%;
-    min-height: 100vh;
-    height: fit-content;
-    background-color: #f3f2ee;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: #f3f2ee;
 }
 
 .profile-pic {
-    height: 10.5rem;
-    width: 10.5rem;
-    position: absolute;
-    border: 4px solid white !important;
-    margin-top: 6rem;
-    margin-left: 16px;
+  height: 10.5rem;
+  width: 10.5rem;
+  position: absolute;
+  border: 4px solid white !important;
+  margin-top: 6rem;
+  margin-left: 16px;
 }
 
 .card {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
-    margin-bottom: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
+  margin-bottom: 15px;
 }
 
 .user-info-body {
-    padding-top: 50px !important;
-    padding-left: 25px !important;
+  padding-top: 50px !important;
+  padding-left: 25px !important;
+
 }
 
 button {
-    margin-right: 8px;
-    background-color: rgb(0, 114, 177);
-    border-color: rgb(0, 114, 177);
-    height: 35px;
-    padding: .3rem 1.2rem !important;
-    font-weight: 500;
-    margin-right: 8px !important;
+  margin-right: 8px;
+  background-color: rgb(0, 114, 177);
+  border-color: rgb(0, 114, 177);
+  height: 35px;
+  padding: .3rem 1.2rem !important;
+  font-weight: 500;
+  margin-right: 8px !important;
 }
 
-@media screen and ( max-width: 1220px) {
-    .profile-pic {
-        height: 8.5rem;
-        width: 8.5rem;
-        margin-top: 30px;
-        position: absolute;
-        border: 4px solid white !important;
-        margin-left: 2rem;
-    }
-    .cover-img {
-        height: 100px;
-    }
+
+@media screen and ( max-width: 1220px ){
+  .profile-pic {
+    height: 8.5rem;
+    width: 8.5rem;
+    margin-top: 30px;
+    position: absolute;
+    border: 4px solid white !important;
+    margin-left: 2rem;
+  }
+  .cover-img {
+    height: 100px;
+  }
 }
 
 button {
-    margin-right: 8px;
-    background-color: rgb(0, 114, 177);
-    border-color: rgb(0, 114, 177);
-    height: 35px;
-    padding: .3rem 1.2rem !important;
-    font-weight: 500;
-    margin-right: 8px !important;
+  margin-right: 8px;
+  background-color: rgb(0, 114, 177);
+  border-color: rgb(0, 114, 177);
+  height: 35px;
+  padding: .3rem 1.2rem !important;
+  font-weight: 500;
+  margin-right: 8px !important;
 }
 
 .member-name {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .cover-image {
-    height: 200px;
-    overflow: hidden;
+  height: 200px;
+  overflow: hidden;
 }
 
 .member-position {
-    font-size: 15px;
-    font-weight: 400;
-    margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 
 p {
+  padding: 0px !important; 
+  margin:0px !important
+}
+
+.member-name span{
+  font-size: 12px;
+}
+
+@media screen and ( max-width: 1220px ){
+  .profile-pic {
+      height: 8.5rem;
+      width: 8.5rem;
+      margin-top: 30px;
+      position: absolute;
+      border: 4px solid white !important;
+      margin-left: 2rem;
+  }
+  
+  .cover-img {
+      height: 100px;
+  }
+  
+  .user-info-body{
+    padding-top: 60px !important;
+  }
+  
+  .user-info{
+    padding: 0px;
+  }
+}
+
+@media screen and ( max-width: 500px ){
+  .user-info{
     padding: 0px !important;
-    margin: 0px !important
+  }
+  .cover-image {
+    height: 100px;
+    overflow: hidden;
+  }
 }
-
-.member-name span {
-    font-size: 12px;
-}
-
-@media screen and ( max-width: 1220px) {
-    .profile-pic {
-        height: 8.5rem;
-        width: 8.5rem;
-        margin-top: 30px;
-        position: absolute;
-        border: 4px solid white !important;
-        margin-left: 2rem;
-    }
-    .cover-img {
-        height: 100px;
-    }
-    .user-info-body {
-        padding-top: 60px !important;
-    }
-    .user-info {
-        padding: 0px;
-    }
-}
-
-@media screen and ( max-width: 500px) {
-    .user-info {
-        padding: 0px !important;
-    }
-    .cover-image {
-        height: 100px;
-        overflow: hidden;
-    }
-}
-
 
 /* FOOTER */
-
 footer {
-    width: 100%;
-    height: 220px;
-    padding: 2rem 2rem;
-    margin: 1rem 0;
+  width: 100%;
+  height: 220px;
+  padding: 2rem 2rem;
+  margin: 1rem 0;
 }
 
 div.row.footer-logo {
-    width: 100%;
-    height: 2.2rem;
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 10px;
 }
 
 div.row.footer-logo img {
-    height: 1.5rem;
+  height: 1.5rem;
 }
 
 footer div.col-md-2 {
-    padding: 0;
+  padding: 0;
+}
+
+footer p {
+  line-height: 24px;
 }
 
 footer p,
 span,
 label {
-    font-size: 12px;
-    margin-bottom: 0.7rem;
-    color: #00000099;
-    font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 0.7rem;
+  color: #00000099;
+  font-weight: 600;
 }
 
 footer p:hover {
-    color: #0a66c2;
-    text-decoration: underline;
-    cursor: pointer;
+  color: #0a66c2;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 footer h6:hover {
-    color: #0a66c2;
-    text-decoration: underline;
-    cursor: pointer;
+  color: #0a66c2;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 footer h6 {
-    font-size: 14px;
-    margin: 0;
+  font-size: 14px;
+  margin: 0;
 }
 
 span.copyright {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 footer svg {
-    color: #00000099;
+  color: #00000099;
 }
 
 footer select {
-    width: 100%;
-    height: 2rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    background-color: #f3f2ee;
-    color: #00000099;
-    border: 1px solid #00000099;
-    border-radius: 5px;
+  width: 100%;
+  height: 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: #f3f2ee;
+  color: #00000099;
+  border: 1px solid #00000099;
+  border-radius: 5px;
 }
 
 footer select:hover {
-    border: 2px solid #00000099;
+  border: 2px solid #00000099;
 }
 
 footer select:focus {
-    border: none;
-    box-shadow: 0 0 5px #0a66c2;
+  border: none;
+  box-shadow: 0 0 5px #0a66c2;
 }
 
 footer select:focus-visible {
-    outline: none;
-    border: none;
-    box-shadow: 0 0 5px #0a66c2;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 5px #0a66c2;
 }
 
 footer select option {
-    background-color: white;
+  background-color: white;
 }
 
 footer a.dropdown-item {
-    padding: 5px 10px;
-    font-size: 12px;
-    color: #00000099;
-    font-weight: 500;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #00000099;
+  font-weight: 500;
 }
 
 footer button#dropdown-basic {
-    background-color: #f3f2ee;
-    color: #00000099;
-    font-size: 12px;
-    margin-bottom: 0.7rem;
-    font-weight: 600;
-    border: none;
-    padding: 0;
+  background-color: #f3f2ee;
+  color: #00000099;
+  font-size: 12px;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  border: none;
+  padding: 0;
 }
 
 footer button#dropdown-basic:hover {
-    color: #0a66c2;
-    text-decoration: underline;
-    cursor: pointer;
+  color: #0a66c2;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 footer button#dropdown-basic:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 footer div.dropdown {
-    display: flex;
-    align-items: baseline;
+  display: flex;
+  align-items: baseline;
 }
