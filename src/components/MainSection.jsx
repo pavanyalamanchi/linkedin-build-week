@@ -1,9 +1,10 @@
 import { Container, Col, Row, Card, ListGroup, Button } from "react-bootstrap";
-import cover from "../assets/cover.jpg";
 import { SiTesla, SiSpacex } from "react-icons/si";
-import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
+import Sidebar from "./Sidebar";
 import ProfileEdit from "./ProfileEdit";
+import ExperienceSection from './ExperienceSection'
+import cover from "../assets/cover.jpg";
 
 const MainSection = () => {
   const [profileData, setProfileData] = useState("");
@@ -147,8 +148,8 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
                           <p className="card-text">
-                            <small class="text-muted">3 React</small>
-                            <small class="text-muted">1 Comment</small>
+                            <small className="text-muted">3 React</small>
+                            <small className="text-muted">1 Comment</small>
                           </p>
                         </div>
                       </div>
@@ -170,8 +171,8 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
                           <p className="card-text">
-                            <small class="text-muted">3 React</small>
-                            <small class="text-muted">1 Comment</small>
+                            <small className="text-muted">3 React</small>
+                            <small className="text-muted">1 Comment</small>
                           </p>
                         </div>
                       </div>
@@ -195,8 +196,8 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this</p>
                           <p className="card-text">
-                            <small class="text-muted">3 React</small>
-                            <small class="text-muted">1 Comment</small>
+                            <small className="text-muted">3 React</small>
+                            <small className="text-muted">1 Comment</small>
                           </p>
                         </div>
                       </div>
@@ -218,8 +219,8 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
                           <p className="card-text">
-                            <small class="text-muted">3 React</small>
-                            <small class="text-muted">1 Comment</small>
+                            <small className="text-muted">3 React</small>
+                            <small className="text-muted">1 Comment</small>
                           </p>
                         </div>
                       </div>
@@ -237,6 +238,11 @@ const MainSection = () => {
               </Button>
             </Card.Body>
           </Card>
+          
+          <Card>
+            <ExperienceSection />
+          </Card>
+          
         </Col>
         
         <Col sm={4}>
