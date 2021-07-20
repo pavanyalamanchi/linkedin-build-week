@@ -1,9 +1,9 @@
 import { Container, Col, Row, Card, ListGroup, Button } from "react-bootstrap";
-import profile from "../assets/musk.png";
 import cover from "../assets/cover.jpg";
 import { SiTesla, SiSpacex } from "react-icons/si";
 import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
+import ProfileEdit from "./ProfileEdit";
 
 const MainSection = () => {
   const [profileData, setProfileData] = useState("");
@@ -40,9 +40,16 @@ const MainSection = () => {
             <div className="cover-image">
               <Card.Img className="cover-img" variant="top" src={cover} />
             </div>
-            <img src={profile} alt="#" className="profile-pic rounded-circle" />
+            <img
+              src={profileData.image}
+              alt="#"
+              className="profile-pic rounded-circle"
+            />
 
             <Card.Body className="user-info-body">
+              <Row className="justify-content-end">
+                  <ProfileEdit firstName={profileData.name} lastName={profileData.surname} headline={profileData.bio} country={profileData.area} industry={profileData.title}/>
+              </Row>
               <Row className="justify-content-space-between rows-col-md-6 rows-col-sm-12 rows-col-sx-12 ">
                 <Col>
                   <div className="d-flex mt-3">
@@ -71,11 +78,11 @@ const MainSection = () => {
                 <Col className="col d-flex justify-content-center">
                   <ListGroup variant="flush" className="mt-3">
                     <ListGroup.Item>
-                      <SiTesla className='svg-margin' />
+                      <SiTesla className="svg-margin" />
                       Tesla
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <SiSpacex className='svg-margin' />
+                      <SiSpacex className="svg-margin" />
                       SpaceX
                     </ListGroup.Item>
                   </ListGroup>
@@ -83,17 +90,12 @@ const MainSection = () => {
               </Row>
 
               <div>
-                <a
-                  href="./sample"
-                  className='connections'
-                >
+                <a href="./sample" className="connections">
                   500+ Connections
                 </a>
               </div>
-              <div className="profile-button-margin" >
-                <Button
-                  className="btn text-light rounded-pill mb-2 open-to"
-                >
+              <div className="profile-button-margin">
+                <Button className="btn text-light rounded-pill mb-2 open-to">
                   Open To
                 </Button>
                 <button className="btn btn-outline-secondary rounded-pill mb-2">
@@ -109,9 +111,7 @@ const MainSection = () => {
           <Card>
             <Card.Body>
               <h3>About</h3>
-              <p>
-                {profileData.bio}
-              </p>
+              <p>{profileData.bio}</p>
             </Card.Body>
           </Card>
 
@@ -119,9 +119,7 @@ const MainSection = () => {
             <Card.Body>
               <h3>Activity</h3>
               <div>
-                <span className='activity-followers'>
-                  1,844 followers
-                </span>
+                <span className="activity-followers">1,844 followers</span>
               </div>
               <Row>
                 <Col>
@@ -136,9 +134,7 @@ const MainSection = () => {
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
-                          <h5
-                            className="activity-body-header"
-                          >
+                          <h5 className="activity-body-header">
                             Simulation gear reducer
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
@@ -157,15 +153,11 @@ const MainSection = () => {
                           className="cover-img activity-image"
                           variant="top"
                           src={cover}
-                          
                         />
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
-                          <h5
-                            className="activity-body-header"
-                            
-                          >
+                          <h5 className="activity-body-header">
                             Simulation gear reducer
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
@@ -186,15 +178,11 @@ const MainSection = () => {
                           className="cover-img activity-image"
                           variant="top"
                           src={cover}
-                          
                         />
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
-                          <h5
-                            className="activity-body-header"
-                            
-                          >
+                          <h5 className="activity-body-header">
                             Simulation gear reducer
                           </h5>
                           <p className="card-text">Elon Musk shared this</p>
@@ -213,15 +201,11 @@ const MainSection = () => {
                           className="cover-img activity-image"
                           variant="top"
                           src={cover}
-                          
                         />
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
-                          <h5
-                            className="activity-body-header"
-                            
-                          >
+                          <h5 className="activity-body-header">
                             Simulation gear reducer
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>

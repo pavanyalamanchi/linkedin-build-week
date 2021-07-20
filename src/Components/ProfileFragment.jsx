@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import faker from 'faker'
 
 export default function ProfileFragment(props) {
@@ -10,7 +9,7 @@ export default function ProfileFragment(props) {
         <div className="user-icon-container">
   			  <img 
             src={props.userProfileImage} 
-            alt="Profile Image" 
+            alt="Profile Image1" 
             className="user-icon"
             />
         </div>
@@ -40,13 +39,3 @@ function relatedness() {
 }
 
 
-{/* <div className="user-fragment-info">
-        <h6 className="user-fragment-title">
-          {faker.name.firstName()} {faker.name.lastName()} 
-          <span className="user-fragment-relatedness">• {relatedness()}</span>
-        </h6>
-        <p className="user-fragment-description">
-          {faker.name.jobDescriptor() + " " + faker.name.jobTitle()} as;ldkfja;sldkfja;sldkfja;sldfkjas;ldfkjas;dlfkjdl;k
-        </p>
-        
-      </div> */}
