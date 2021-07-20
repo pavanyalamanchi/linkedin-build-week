@@ -14,7 +14,7 @@ a :hover {
 
 .sidebar-main-container {
   width: 310px;
-  height: 100em;
+  height: auto;
   margin: 10px;
   
   display: flex;
