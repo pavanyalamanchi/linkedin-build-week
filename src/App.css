@@ -19,7 +19,7 @@
   margin-bottom: 15px;
 }
 .user-info-body{
-  padding-top: 80px !important;
+  padding-top: 50px !important;
   padding-left: 25px !important;
 }
 
@@ -72,12 +72,17 @@ margin:0px !important}
   .user-info{
       padding: 0px;
   }
+  
 }
 @media screen and ( max-width: 500px ){
  
   .user-info{
       padding: 0px !important;
   }
+  .cover-image {
+    height: 100px;
+    overflow: hidden;
+}
 }
 
 /* FOOTER */

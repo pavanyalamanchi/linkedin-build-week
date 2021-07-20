@@ -38,14 +38,14 @@ const MainSection = () => {
                   </ListGroup>
                 </Col>
               </Row>
-              <Row>
+              
                  <div> <a href='./sample' style={{ textDecoration: "none", fontWeight: "600", fontSize:'medium' }}>500+ Connections</a></div>
                   <div className='' style={{marginTop:'0.8rem'}}>
         <Button className='btn btn-info text-light rounded-pill mb-2' style={{backgroundColor:'#0a66c2', borderColor:'#0a66c2'}}> Open To</Button>
                     <button className='btn btn-outline-secondary rounded-pill mb-2'>Add section</button>
                     <button className='btn btn-outline-secondary rounded-pill mb-2'>More</button>
                   </div>
-              </Row>
+             
             </Card.Body>
           </Card>
 
