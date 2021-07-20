@@ -3,7 +3,7 @@ import profile from "../assets/musk.png";
 import cover from "../assets/cover.jpg";
 import { SiTesla, SiSpacex } from 'react-icons/si'
 import Sidebar from './Sidebar'
-import Experience from './experience'
+import ExperienceSection from './ExperienceSection'
 
 const MainSection = () => {
   return (
@@ -126,10 +126,15 @@ const MainSection = () => {
             <Button href="#" variant="light" size="lg" style={{width: "100%"}}> See all activity</Button>
           </Card.Body>
           </Card>
-          <Experience />
+          
+          <ExperienceSection />
+            
         </Col>
-        <Col sm={4}> <Sidebar />
+        
+        <Col sm={4}> 
+          <Sidebar />
         </Col>
+        
       </Row>
       <Row className="justify-content-center">
         
