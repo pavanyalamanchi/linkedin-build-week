@@ -10,8 +10,42 @@ a :hover {
   margin-top: 10px;
 }
 
+/* ============ EXPERIENCE SECTION ============ */
 
-/* SIDEBAR CSS */
+.experience-fragment-container {
+  display: flex;
+  width: 100%;
+}
+
+.experience-fragment-company-image {
+  width: 64px;
+  height: 64px;
+  background-color: red;
+  margin: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.experience-fragment-details {
+  width: 100%;
+}
+
+.experience-fragment-title {
+  color: black;
+  font-size: 16px;
+  margin: 0 0 2px 0;
+}
+.experience-fragment-text {
+  color: black;
+  font-size: 14px; 
+}
+
+.experience-fragment-description {
+  color: black;
+  text-decoration: none;
+  font-size: 14px; 
+}
+
+/* ============ SIDEBAR CSS ============ */
 
 .background-color-main {
   background-color: #f3f2ee;
@@ -70,6 +104,7 @@ a :hover {
 .user-fragment-title {
   font-size: 15px;
   margin-bottom: 3px;
+  color: #004182;
 }
 
 .user-fragment-relatedness {
@@ -84,11 +119,11 @@ a :hover {
 }
 
 button {
-    margin-right: 8px;
-    background-color: rgb(0, 114, 177);
-    border-color: rgb(0, 114, 177);
-    height: 35px;
-    padding: 0rem 1.2rem !important;
-    font-weight: 500;
-    margin-right: 8px !important;
+  margin-right: 8px;
+  background-color: rgb(0, 114, 177);
+  border-color: rgb(0, 114, 177);
+  height: 35px;
+  padding: 0rem 1.2rem !important;
+  font-weight: 500;
+  margin-right: 8px !important;
 }
