@@ -119,27 +119,25 @@ const MainSection = () => {
             <Card.Body>
               <h3>Activity</h3>
               <div>
-                <span style={{ color: "#0a66c2", fontWeight: "500" }}>
+                <span className='activity-followers'>
                   1,844 followers
                 </span>
               </div>
               <Row>
                 <Col>
-                  <div className="card mb-3">
+                  <div className="card mb-3 activity-border">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img"
+                          className="cover-img activity-image"
                           variant="top"
                           src={cover}
-                          style={{ height: "60px", width: "60px" }}
                         />
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
                           <h5
-                            className=""
-                            style={{ fontSize: "16px", lineHeight: "5px" }}
+                            className="activity-body-header"
                           >
                             Simulation gear reducer
                           </h5>
@@ -152,21 +150,21 @@ const MainSection = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="card mb-3">
+                  <div className="card mb-3 activity-border">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img"
+                          className="cover-img activity-image"
                           variant="top"
                           src={cover}
-                          style={{ height: "60px", width: "60px" }}
+                          
                         />
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
                           <h5
-                            className=""
-                            style={{ fontSize: "16px", lineHeight: "5px" }}
+                            className="activity-body-header"
+                            
                           >
                             Simulation gear reducer
                           </h5>
@@ -181,21 +179,21 @@ const MainSection = () => {
                   </div>
                 </Col>
                 <Col>
-                  <div className="card mb-3">
+                  <div className="card mb-3 activity-border">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img"
+                          className="cover-img activity-image"
                           variant="top"
                           src={cover}
-                          style={{ height: "60px", width: "60px" }}
+                          
                         />
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
                           <h5
-                            className=""
-                            style={{ fontSize: "16px", lineHeight: "5px" }}
+                            className="activity-body-header"
+                            
                           >
                             Simulation gear reducer
                           </h5>
@@ -208,21 +206,21 @@ const MainSection = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="card mb-3">
+                  <div className="card mb-3 activity-border">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img"
+                          className="cover-img activity-image"
                           variant="top"
                           src={cover}
-                          style={{ height: "60px", width: "60px" }}
+                          
                         />
                       </div>
                       <div className="col-md-10">
                         <div className="card-body">
                           <h5
-                            className=""
-                            style={{ fontSize: "16px", lineHeight: "5px" }}
+                            className="activity-body-header"
+                            
                           >
                             Simulation gear reducer
                           </h5>
