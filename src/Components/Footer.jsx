@@ -10,7 +10,7 @@ const Footer = () => {
           className="img-fluid"
           src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
           alt="linkedin-logo"
-          style={{height: "40px", marginLeft: "17px"}}
+          style={{height: "30px"}}
         />
       </Row>
       <Row className="footer-body">

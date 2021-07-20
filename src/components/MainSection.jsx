@@ -8,7 +8,7 @@ const MainSection = () => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col sm={8} className="user-info">
+        <Col sm={8} className="user-info mt-2">
           <Card>
            <div className="cover-image"> <Card.Img className="cover-img" variant="top" src={cover} /></div>
             <img src={profile} alt="#" className="profile-pic rounded-circle" />
