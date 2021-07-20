@@ -12,6 +12,7 @@ const AddForm = (props) => {
     industry: "",
     headline: "",
     description: "",
+    upload: "",
   });
   const [working, setWorking] = useState(false);
   const [headline, setHeadline] = useState(false);
@@ -307,9 +308,27 @@ const AddForm = (props) => {
             }}
           />
         </Form.Group>
+
+        <Form.Group controlId="formFile" className="mb-3">
+          <Form.Label>
+            Media <br />
+            Add or link to external documents, photos, sites, videos, and
+            presentations.
+          </Form.Label>
+          <Form.Control
+            type="file"
+            value={form.upload}
+            onChange={(e) => {
+              handleInput("upload", e.target.value);
+            }}
+          />
+        </Form.Group>
+        <Modal.Footer>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Modal.Footer>
         {console.log(form)}
-        
-        <Button type="submit">Save</Button>
       </Form>
     </>
   );
