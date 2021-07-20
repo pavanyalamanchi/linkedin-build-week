@@ -13,6 +13,7 @@ const AddForm = (props) => {
     headline: "",
     description: "",
   });
+  
   const [working, setWorking] = useState(false);
   const [headline, setHeadline] = useState(false);
 
@@ -23,26 +24,31 @@ const AddForm = (props) => {
     });
   };
   
-  const submitForm = (e) => {
-    //Validations
+  const submitForm = async (e) => {
     e.preventDefault()
-    console.log()
+    //Validations
+    let userId = "60f53b250efe7800155c34a0"
+    let startDateSubmit = form.start.month + "-" + form.start.year
+    let endDateSubmit = form.end.month + "-" + form.end.year
+    
+    let fatObject = {
+      role: form.title,
+      company: form.company,
+      startDate: startDateSubmit,
+      endDate: endDateSubmit,
+      description: form.description,
+      area: form.location
+    }
+    
     try {
-      const post = fetch(`https://striveschool-api.herokuapp.com/api/profile/:userId/experiences`, {
-        header: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
+      const post = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
+        headers: {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+          "Content-Type": "application/json"
         },
         method: 'POST',
-        body: {
-          role: form.title,
-          company: form.company,
-          startDate: form.start,
-          endDate: form.end,
-          description: form.description,
-          area: form.location,
-        }
+        body: JSON.stringify(fatObject)
       })
-      alert("Works!")
     } catch (error) {
       console.log(error)
     }
