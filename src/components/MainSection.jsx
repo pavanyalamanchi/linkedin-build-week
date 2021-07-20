@@ -3,6 +3,7 @@ import profile from "../assets/musk.png";
 import cover from "../assets/cover.jpg";
 import { SiTesla, SiSpacex } from 'react-icons/si'
 import Sidebar from './Sidebar'
+import Experience from './experience'
 
 const MainSection = () => {
   return (
@@ -51,14 +52,14 @@ const MainSection = () => {
 
           <Card>
           <Card.Body>
-            <h3>About</h3>
+            <h3 className="body-title">About</h3>
             <p>Experienced Senior Web Application Developer with a demonstrated history of working in the computer software industry. Skilled in Negotiation,Web Development,Mobile App development, C++, Content Management Systems (CMS), Management, and HTML. Strong engineering professional with a Master’s of Computer Science focused in Computer Science from Halmstad University, Sweden.</p>
           </Card.Body>
           </Card>
 
           <Card>
           <Card.Body>
-            <h3>Activity</h3>
+            <h3 className="body-title">Activity</h3>
             <div><span style={{color: "#0a66c2", fontWeight:"500"}}>1,844 followers</span></div>
             <Row>
               <Col>
@@ -125,6 +126,7 @@ const MainSection = () => {
             <Button href="#" variant="light" size="lg" style={{width: "100%"}}> See all activity</Button>
           </Card.Body>
           </Card>
+          <Experience />
         </Col>
         <Col sm={4}> <Sidebar />
         </Col>

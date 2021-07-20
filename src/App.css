@@ -4,7 +4,13 @@
   height: fit-content;
   background-color: #f3f2ee;
 }
-
+.icons{
+  font-size: x-large;
+}
+.body-title{
+  font-size: 24px;
+  font-weight: 400;
+}
 .profile-pic {
   height: 10.5rem;
   width: 10.5rem;
