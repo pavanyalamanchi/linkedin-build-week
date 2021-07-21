@@ -2,6 +2,44 @@ body {
     background-color: #f3f2ee !important;
 }
 
+/* ========== SIGN IN SCREEN ========== */
+.sign-in-screen {
+  position: relative;
+  top: -55px;
+  height: 93vh;
+  width: 100%;
+  z-index: 6;
+  background-color: #f3f2ee;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-logo {
+  margin: 30px 0;
+  height: 60px;
+}
+.sign-in-text {
+  margin-bottom: 20px;
+}
+
+.sign-in-form {
+  width: 458px;
+}
+.sign-in-button {
+  margin: 18px 0;
+  
+}
+.sign-in-image-container {
+  margin: 0 50px;
+}
+.sign-in-image {
+  height: 100px;
+}
+
+
 a :hover {
   text-decoration: none;
 }

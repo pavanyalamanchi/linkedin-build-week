@@ -1,6 +1,9 @@
 .default-blue {
   color: #004182;
 }
+.default-blue-bg {
+  background-color: #004182; 
+}
 
 .profile-pic {
   height: 10.5rem;
