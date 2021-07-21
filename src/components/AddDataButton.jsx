@@ -1,21 +1,25 @@
-import Modal from 'react-bootstrap/Modal'
-import AddForm from './AddForm'
+import Modal from "react-bootstrap/Modal";
+import AddForm from "./AddForm";
 import { FiPlus } from "react-icons/fi";
-import {useState} from 'react'
-import { Button } from 'react-bootstrap'
+import { useState } from "react";
+import { Button } from "react-bootstrap";
 
 export default function AddExperience(props) {
-  let [show, setShow] = useState(false)
-  const handleShow = () => { setShow(true) }
-  const handleClose = () => { setShow(false) }
-  
+  let [show, setShow] = useState(false);
+  const handleShow = () => {
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
+
   return (
     <>
       <div className="experience-fragment-add-button-container">
         <FiPlus
           className="icons experience-fragment-add-button"
-          onClick={handleShow}>
-         </FiPlus>
+          onClick={handleShow}
+        ></FiPlus>
       </div>
       <Modal
         {...props}
