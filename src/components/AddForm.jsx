@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Row, Col, Modal, Button } from "react-bootstrap";
+import { Form, Row, Col, Button } from "react-bootstrap";
 
 const AddForm = (props) => {
   const [form, setForm] = useState({
