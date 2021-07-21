@@ -1,3 +1,72 @@
+<<<<<<< Updated upstream
+=======
+.default-blue {
+  color: #004182;
+}
+
+/* SIGN IN */
+
+.sign-in-screen {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  height: 10.5rem;
+  width: 10.5rem;
+  position: absolute;
+  border: 4px solid white !important;
+  margin-top: 6rem;
+  margin-left: 2rem;
+}
+
+.profile-contact-info {
+  color: #004182;
+  font-weight: 600;
+}
+
+.profile-connections {
+  position: relative;
+  bottom: 10px;
+  color: #004182;
+  font-weight: 600;
+}
+
+.svg-margin {
+  margin-right: 15px;
+}
+
+.list-border {
+  border: 1px solid white !important;
+}
+
+.edit-button {
+  border-radius: 20px !important;
+}
+
+.list-group-flush {
+  margin-top: 0;
+}
+
+.open-to {
+  background-color: #004182 !important;
+  border-color: #004182 !important;
+}
+
+.svg-edit {
+  height: 21px;
+  width: 21px;
+  margin-right: 60px;
+}
+
+.card {
+  border-radius: 12px !important;
+}
+
+>>>>>>> Stashed changes
 .App {
   width: 100%;
   min-height: 100vh;
