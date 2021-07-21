@@ -2,6 +2,16 @@
   color: #004182;
 }
 
+/* SIGN IN */
+
+.sign-in-screen {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile-pic {
   height: 10.5rem;
   width: 10.5rem;
@@ -60,6 +70,7 @@
   height: fit-content;
   background-color: #f3f2ee;
 }
+
 .icons {
   font-size: x-large;
 }
@@ -308,14 +319,13 @@ p {
 footer {
   width: 100%;
   height: 220px;
-  padding: 2rem 2rem;
+  padding: 2rem 6rem;
   margin: 1rem 0;
 }
 
 div.row.footer-logo {
   width: 100%;
-  height: 2rem;
-  margin-bottom: 10px;
+  height: 2.2rem;
 }
 
 div.row.footer-logo img {
@@ -326,15 +336,11 @@ footer div.col-md-2 {
   padding: 0;
 }
 
-footer p {
-  line-height: 24px;
-}
-
 footer p,
 span,
 label {
   font-size: 12px;
-  margin-bottom: 0.6rem !important;
+  margin-bottom: 0.7rem;
   color: #00000099;
   font-weight: 600;
 }

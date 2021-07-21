@@ -1,23 +1,29 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-/* import MainSection from './components/MainSection'
-import Footer from './components/Footer' */
-import TopNav from "./components/TopNav";
-import NewPost from "./components/NewPost";
-/* import CenteredModal from './components/PostModal'; */
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import MeSection from './components/MeSection'
+import Footer from './components/Footer'
+import TopNav from './components/TopNav'
+import ProfileSection from './components/ProfileSection'
+import FeedMain from './components/feed/FeedMain'
+import SignInPage from './components/SignInPage'
 
 function App() {
+  
+  const userSignIn = () => {
+    
+  }
+  
+  
   return (
     <>
-      <div className="App">
-        <TopNav />
-
-        <NewPost />
-        {/* <MainSection />
-        <Footer /> */}
-      </div>
+      <Router>
+        <Route exact path="/signin" render={routerProps => <SignInPage />} />
+        <Route exact path="/" render={(routerProps => <Home />)}
+        <Footer />
+      </Router>
     </>
-  );
+  );  
 }
 
 export default App;
