@@ -13,7 +13,7 @@ class FeedMain extends Component {
     	<div>
         <Container>
           <Row>
-            <Col sm={3}> <FeedLeftSidebar /></Col>
+            <Col sm={3} className="rightSidebar"> <FeedLeftSidebar /></Col>
             <Col sm={5}> </Col>
             <Col sm={4}> <FeedRightSidebar /></Col>
           </Row>

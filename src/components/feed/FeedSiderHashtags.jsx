@@ -12,7 +12,7 @@ export default function FeedSiderHashtags(props) {
             <Hashtags title="Followed Hastags"/>
             </Card.Body>
             <a href="">
-                <Card.Footer className="text-center font-weight-bold text-muted text-decoration-none bg-white">
+                <Card.Footer className="text-center font-weight-bold text-muted text-decoration-none">
                 Discover More
                 </Card.Footer>
             </a>

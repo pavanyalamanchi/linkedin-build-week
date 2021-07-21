@@ -1,7 +1,9 @@
 .default-blue {
   color: #004182;
 }
-
+body{
+  font-size: 14px !important;
+}
 .profile-pic {
   height: 10.5rem;
   width: 10.5rem;
@@ -511,9 +513,7 @@ div.modal-footer {
 }
 
 /* feed sidebars */
-.leftSidebarCardBody{
-  font-size: 12px;
-}
+
 .siderbarcover{
   height: 54px;
   background-size: cover;
@@ -544,4 +544,40 @@ hr{
   width: 64px;
   position: absolute;
   border: 2px solid white;
+}
+.card-footer {
+  padding: .75rem 1.25rem;
+  background-color: rgb(255 255 255 / 3%);
+  border-top: 1px solid rgb(255 255 255 / 13%);
+}
+.topCourseList{
+  list-style: none;
+  padding-left: 0px;
+}
+.topCourseList li a{
+  color: black;
+  font-weight: 500;
+}
+.topCourseList li a span{
+  display: block;
+}
+.topCourseList li a:hover{
+  text-decoration: none;
+}
+.topCourseList li:hover{
+  background-color: lightgray;
+}
+.sidebarFooter{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.sidebarFooter li{
+  display: flex;
+  margin: .4rem .8rem;
+}
+.sidebarFooter li a{
+  color: #6c757d!important;
 }

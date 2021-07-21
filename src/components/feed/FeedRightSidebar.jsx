@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import FeedSiderbarHashtags from './FeedSiderHashtags'
+import TopCourses from './TopCourses'
+import SidebarAd from './SidebarAd'
+import FeedsidebarFooter from './FeedSidebarFooter'
 
 export default class FeedRightSidebar extends Component {
 	render() {
 		return (
 			<>
-			<FeedSiderbarHashtags title="Recent" />
+			<TopCourses title="Today’s top courses"/>
+			<SidebarAd />
+			<FeedsidebarFooter />
       		</>
 		)
 	}

@@ -70,7 +70,7 @@ import {
                     />
                   </Nav>
                   <div className="vl ml-1 d-none d-sm-block"></div>
-                  <Nav.Link href="#pricing" style={{ color: "gray" }}>
+                  <Nav.Link href="#pricing" className="d-none d-sm-block" style={{ color: "gray" }}>
                     <RiDashboardFill className="nav-icon" />
                     <br />
                     <span>Work</span>
