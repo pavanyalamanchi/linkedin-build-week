@@ -9,15 +9,9 @@ a :hover {
 }
 
 .sidebar-main-container {
-<<<<<<< Updated upstream
-  width: 310px;
-  height: 100em;
-  margin: 10px;
-=======
   width: 100%;
   height: auto;
   margin: 10px 10px 10px 0px;
->>>>>>> Stashed changes
   
   display: flex;
   flex-direction: column;
