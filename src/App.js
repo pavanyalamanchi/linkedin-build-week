@@ -1,5 +1,7 @@
 import './App.css';
-import Sidebar  from './components/Sidebar'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import MeSection from './components/MeSection'
 import Footer from './components/Footer'
 import TopNav from './components/TopNav'
 import ProfileSection from './components/ProfileSection'
@@ -7,6 +9,12 @@ import FeedMain from './components/feed/FeedMain'
 import SignInPage from './components/SignInPage'
 
 function App() {
+  
+  const userSignIn = () => {
+    
+  }
+  
+  
   return (
     <>
       <Router>
@@ -15,7 +23,7 @@ function App() {
         <Footer />
       </Router>
     </>
-  );
+  );  
 }
 
 export default App;

@@ -1,14 +1,16 @@
-import { Row, Col, Dropdown } from "react-bootstrap";
+import {Container, Row, Col, Dropdown } from "react-bootstrap";
 
 const Footer = () => {
   
   return (
+    <Container>
     <footer>
       <Row className="footer-logo">
         <img
           className="img-fluid"
           src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
           alt="linkedin-logo"
+          style={{height: "30px"}}
         />
       </Row>
       <Row className="footer-body">
@@ -96,6 +98,7 @@ const Footer = () => {
         </Col>
       </Row>
     </footer>
+    </Container>
   );
 };
 

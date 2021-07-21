@@ -7,5 +7,4 @@ const FeedLeftSidebar = () => {
     </div>
   )
 }
-
 export default FeedLeftSidebar
