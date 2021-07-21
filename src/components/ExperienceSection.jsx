@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Card } from 'react-bootstrap'
 import Experience from './Experience'
 import Loading from './Loading'
+import AddDataButton from './AddDataButton'
 
 export default function ExperienceSection (props) {
   const [experiences, setExperiences] = useState(null)
@@ -18,12 +19,18 @@ export default function ExperienceSection (props) {
   	return (
   		<div>
   			<Card.Body>
-          <h5 className="profile-body-section-header my-2 mb-4">
-            Experience
-          </h5>
-          { experiences.map(exp => (
+          <div className="profile-section-header-container">
+            <h5 className="profile-body-section-title my-2">
+              Experience
+            </h5>
+            <AddDataButton />
+          </div>
+          
+          { 
+            experiences.map(exp => (
               <Experience experienceData={exp} />  
-          ))}
+            ))
+          }
         </Card.Body>
   		</div>
   	)

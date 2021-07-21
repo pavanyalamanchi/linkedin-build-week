@@ -48,7 +48,8 @@ export default function Experience(props) {
   )
 }
 
-function convertDateToString (start, end) {
+function convertDateToString (start, end) { 
+  
   console.log(start)
   console.log(end)
   if (end === null) {
