@@ -34,8 +34,17 @@ a :hover {
 
 .experience-fragment-title {
   color: black;
+  display: inline;
   font-size: 16px;
   margin: 0 0 2px 0;
+}
+
+.experience-fragment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
 }
 .experience-fragment-text {
   color: black;
@@ -46,6 +55,18 @@ a :hover {
   color: black;
   text-decoration: none;
   font-size: 14px; 
+}
+
+.experience-fragment-edit-container :hover{
+  cursor: pointer;
+}
+.experience-fragment-edit-button {
+  height: 20px;
+  width: 20px;
+}
+.experience-fragment-edit-button {
+  height: 20px;
+  width: 20px;
 }
 
 /* ============ SIDEBAR CSS ============ */
