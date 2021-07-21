@@ -11,13 +11,13 @@ const SinglePost = (prop) => {
     <Card>
       <Card.Body className="post-card">
         <Row>
-          <Col xs={2} className="post-profile-img">
+          <div className="post-profile-img">
             <img
               src={prop.user.image}
               alt="profile-picture"
               className="img-fluid"
             />
-          </Col>
+          </div>
           <Col xs={10} className="post-profile-info">
             <Row className="post-name-and-edit">
               <Col xs={3} className="post-name">
@@ -100,16 +100,16 @@ const SinglePost = (prop) => {
         </Row>
         <Row>
           <Col className={showComment ? "post-comment-area" : "d-none"}>
-            <Row>
-              <Col xs={1} className="post-comment-img">
+            <Row className="d-flex">
+              <div className="post-comment-img">
                 <img
                   src="https://180dc.org/wp-content/uploads/2017/11/profile-placeholder.png"
                   alt="profile-picture"
                   className="img-fluid rounded-circle"
                 />
-              </Col>
-              <Col xs={11}>
-                <Form>
+              </div>
+              <div className="post-textarea">
+                <Form className="post-textarea w-100">
                   <Form.Group
                     className="mb-3"
                     controlId="exampleForm.ControlTextarea1"
@@ -117,11 +117,11 @@ const SinglePost = (prop) => {
                     <Form.Control
                       as="textarea"
                       rows={1}
-                      className="post-comment-"
+                      className="post-comment-textarea w-100"
                     />
                   </Form.Group>
                 </Form>
-              </Col>
+              </div>
             </Row>
           </Col>
         </Row>

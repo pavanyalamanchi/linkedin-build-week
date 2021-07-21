@@ -538,18 +538,17 @@ div.col-3.post-name {
   font-weight: 700;
   color: #000000e6;
 }
-div.col-2.post-profile-img {
-  height: 4.5rem;
-  width: 4.5rem;
+div.post-profile-img {
+  height: 4rem;
+  width: 4rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-div.col-2.post-profile-img img {
-  width: 4rem;
-  height: 4rem;
+div.post-profile-img img {
+  padding: 0.3rem;
   object-fit: cover;
 }
 
@@ -648,6 +647,25 @@ div.card-body.post-card {
   border-radius: 5px;
 }
 
-.post-comment-area img {
-  width: 1.5rem;
+.post-comment-img {
+  width: 15%;
 }
+
+.post-textarea {
+  width: 85%;
+}
+
+.post-comment-area img {
+  width: 3rem !important;
+}
+
+textarea.form-control.post-comment-textarea {
+  border-radius: 20px;
+}
+
+/* div.col-1.post-comment-img,
+form.post-textarea {
+  display: flex;
+  align-items: center;
+  ju
+} */
