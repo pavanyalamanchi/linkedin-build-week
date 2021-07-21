@@ -50,14 +50,12 @@ class PostsContainer extends Component {
 
   render() {
     return (
-      <div className="prov-width">
-        <div className="all-posts-container">
-          {this.state.loading && <Loading />}
-          {this.state.display &&
-            this.state.posts
-              .slice(0, 10)
-              .map((p) => <SinglePost user={p.user} post={p} />)}
-        </div>
+      <div className="all-posts-container">
+        {this.state.loading && <Loading />}
+        {this.state.display &&
+          this.state.posts
+            .slice(0, 10)
+            .map((p) => <SinglePost user={p.user} post={p} />)}
       </div>
     );
   }

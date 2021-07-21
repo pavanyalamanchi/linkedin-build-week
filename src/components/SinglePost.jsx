@@ -114,7 +114,11 @@ const SinglePost = (prop) => {
                     className="mb-3"
                     controlId="exampleForm.ControlTextarea1"
                   >
-                    <Form.Control as="textarea" rows={1} />
+                    <Form.Control
+                      as="textarea"
+                      rows={1}
+                      className="post-comment-"
+                    />
                   </Form.Group>
                 </Form>
               </Col>
