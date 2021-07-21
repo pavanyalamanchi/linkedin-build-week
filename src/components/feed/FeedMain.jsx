@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import FeedLeftSidebar from './FeedLeftSidebar'
-import Sidebar from '../Sidebar'
+import FeedRightSidebar from './FeedRightSidebar'
 import { withRouter } from 'react-router-dom'
 
 
@@ -15,7 +15,7 @@ class FeedMain extends Component {
           <Row>
             <Col sm={3}> <FeedLeftSidebar /></Col>
             <Col sm={5}> </Col>
-            <Col sm={4}> <Sidebar /></Col>
+            <Col sm={4}> <FeedRightSidebar /></Col>
           </Row>
         </Container>
       </div>

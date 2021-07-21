@@ -51,7 +51,7 @@
 }
 
 .card {
-  border-radius: 12px !important;
+  border-radius: 11px !important;
 }
 
 .App {
@@ -67,15 +67,6 @@
   font-size: 24px;
   font-weight: 400;
 }
-
-/* .profile-pic {
-  height: 10.5rem;
-  width: 10.5rem;
-  position: absolute;
-  border: 4px solid white !important;
-  margin-top: 6rem;
-  margin-left: 16px;
-} */
 
 .card {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
@@ -517,4 +508,40 @@ div.modal-footer {
   right: 25%;
   width: 50%;
   background-color: white;
+}
+
+/* feed sidebars */
+.leftSidebarCardBody{
+  font-size: 12px;
+}
+.siderbarcover{
+  height: 54px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+hr{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.leftSidebarCardBody a:hover{
+  background-color: #ced4da;
+}
+.hastags{
+  list-style: none;
+  padding-left: 0px;
+}
+.hastags li{
+  line-height: 20px;
+}
+.hastags li span{
+  padding-left: 10px;
+  font-weight: 500;
+}
+.sidebarProfilePhoto{
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  border: 2px solid white;
 }
