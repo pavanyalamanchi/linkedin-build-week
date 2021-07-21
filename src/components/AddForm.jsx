@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Row, Col, Modal, Button } from "react-bootstrap";
 
-const AddForm = () => {
+const AddForm = (props) => {
   const [form, setForm] = useState({
     title: "",
     employmentType: "",
@@ -12,8 +12,8 @@ const AddForm = () => {
     industry: "",
     headline: "",
     description: "",
-    upload: "",
   });
+  
   const [working, setWorking] = useState(false);
   const [headline, setHeadline] = useState(false);
 
@@ -23,10 +23,42 @@ const AddForm = () => {
       [key]: value,
     });
   };
+  
+  const submitForm = async (e) => {
+    e.preventDefault()
+    //Validations
+    let userId = "60f53b250efe7800155c34a0"
+    let startDateSubmit = form.start.month + "-" + form.start.year
+    let endDateSubmit = form.end.month + "-" + form.end.year
+    
+    let fatObject = {
+      role: form.title,
+      company: form.company,
+      startDate: startDateSubmit,
+      endDate: endDateSubmit,
+      description: form.description,
+      area: form.location
+    }
+    
+    try {
+      const post = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
+        headers: {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+          "Content-Type": "application/json"
+        },
+        method: 'POST',
+        body: JSON.stringify(fatObject)
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  
 
   return (
     <>
-      <Form className="container-form">
+      <Form className="container-form" onSubmit={(e) => submitForm(e)}>
         <Form.Group className="w-100">
           <Form.Label>Title *</Form.Label>
           <Form.Control
@@ -88,7 +120,7 @@ const AddForm = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
             type="checkbox"
-            label="I am currently working in this role"
+            label=" I am currently working in this role"
             onClick={() => {
               setWorking(!working);
             }}
@@ -282,27 +314,9 @@ const AddForm = () => {
             }}
           />
         </Form.Group>
-
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>
-            Media <br />
-            Add or link to external documents, photos, sites, videos, and
-            presentations.
-          </Form.Label>
-          <Form.Control
-            type="file"
-            value={form.upload}
-            onChange={(e) => {
-              handleInput("upload", e.target.value);
-            }}
-          />
-        </Form.Group>
-        <Modal.Footer>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Modal.Footer>
         {console.log(form)}
+        
+        <Button type="submit">Save</Button>
       </Form>
     </>
   );

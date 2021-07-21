@@ -24,7 +24,7 @@ import {
             <Col>
               <Container className="mt-n2">
                 <Navbar className="nav-contain">
-                  <Navbar.Brand href="#home">
+                  <Navbar.Brand href="/feed">
                     <SiLinkedin className="in" />
                   </Navbar.Brand>
                   <Form inline className="d-none d-sm-block">
@@ -35,10 +35,10 @@ import {
                     />
                   </Form>
                   <Nav className="">
-                    <Nav.Link href="#home">
+                    <Nav.Link href="/feed">
                       <TiHome className="nav-icon hm" />
                       <br />
-                      <span>home</span>
+                      <span>Home</span>
                     </Nav.Link>
                     <Nav.Link href="#features">
                       <BsFillPeopleFill className="nav-icon" />
@@ -86,4 +86,5 @@ import {
       </>
     );
   };
+  
   export default TopNav;

@@ -1,8 +1,96 @@
+body {
+    background-color: #f3f2ee !important;
+}
+
 a :hover {
   text-decoration: none;
 }
 
-/* SIDEBAR CSS */
+.main-body-container {
+  margin-top: 10px;
+}
+
+.profile-body-section-title {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-section-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.card
+
+/* ============ EXPERIENCE SECTION ============ */
+
+.experience-fragment-container {
+  display: flex;
+  width: 100%;
+}
+
+.experience-fragment-company-image {
+  width: 64px;
+  height: 64px;
+  margin: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.experience-fragment-image {
+  width: 64px;
+  height: 64px;
+}
+.experience-fragment-details {
+  width: 100%;
+}
+
+.experience-fragment-title {
+  color: black;
+  display: inline;
+  font-size: 16px;
+  margin: 0 0 2px 0;
+}
+
+.experience-fragment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.experience-fragment-text {
+  color: black;
+  font-size: 14px; 
+}
+
+.experience-fragment-description {
+  color: black;
+  text-decoration: none;
+  font-size: 14px; 
+}
+
+.experience-fragment-edit-container :hover{
+  cursor: pointer;
+}
+.experience-fragment-edit-button {
+  height: 20px;
+  width: 20px;
+}
+.experience-fragment-add-button-container :hover{
+  cursor: pointer;
+}
+
+.experience-fragment-add-button {
+  height: 24px;
+  width: 24px;
+  margin-right: 14px;
+}
+
+/* ============ SIDEBAR CSS ============ */
 
 .background-color-main {
   background-color: #f3f2ee;
@@ -11,7 +99,7 @@ a :hover {
 .sidebar-main-container {
   width: 310px;
   height: auto;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   
   display: flex;
   flex-direction: column;
@@ -19,7 +107,7 @@ a :hover {
 }
 
 .sidebar-section {
-  padding: 10px 0;
+  padding: 10px 100px !important;
   width: 100%;
   margin-bottom: 20px;
   
@@ -28,7 +116,7 @@ a :hover {
   
   
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
 }
 
 .sidebar-section-title {
@@ -61,6 +149,7 @@ a :hover {
 .user-fragment-title {
   font-size: 15px;
   margin-bottom: 3px;
+  color: #004182;
 }
 
 .user-fragment-relatedness {
@@ -75,11 +164,11 @@ a :hover {
 }
 
 button {
-    margin-right: 8px;
-    background-color: rgb(0, 114, 177);
-    border-color: rgb(0, 114, 177);
-    height: 35px;
-    padding: 0rem 1.2rem !important;
-    font-weight: 500;
-    margin-right: 8px !important;
+  margin-right: 8px;
+  background-color: rgb(0, 114, 177);
+  border-color: rgb(0, 114, 177);
+  height: 35px;
+  padding: 0rem 1.2rem !important;
+  font-weight: 500;
+  margin-right: 8px !important;
 }
