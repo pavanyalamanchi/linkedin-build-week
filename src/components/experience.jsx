@@ -1,15 +1,8 @@
 import React from 'react'
 import faker from 'faker'
 import EditDataButton from './EditDataButton'
-import { Button, } from 'react-bootstrap'
 
 export default function Experience(props) {
-	console.log(props)
-  
-  const handleShow = () => {
-    console.log("Handle show!")
-  }
-  
   return (
     <>
   		<div href="" className="my-3 experience-fragment-container">
@@ -42,8 +35,6 @@ export default function Experience(props) {
           </p>
         </div>
   		</div>
-      
-      
     </>
   )
 }

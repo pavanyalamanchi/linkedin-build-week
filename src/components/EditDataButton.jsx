@@ -1,5 +1,5 @@
 import { Modal, Button } from 'react-bootstrap'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { VscEdit } from "react-icons/vsc";
 
 export default function EditDataButton(props) {

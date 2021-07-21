@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import Sidebar from '../Sidebar'
 import FeedLeftSidebar from './FeedLeftSidebar'
 import { withRouter } from 'react-router-dom'
 
