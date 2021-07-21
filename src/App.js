@@ -6,11 +6,13 @@ import Footer from './components/Footer'
 import TopNav from './components/TopNav'
 import ProfileSection from './components/ProfileSection'
 import FeedMain from './components/feed/FeedMain'
+import SignIn from './components/SignIn'
 
 function App() {
   
-  const userSignIn = () => {
-    
+  const userSignIn = (e) => {
+    e.preventDefault()
+    console.log("calling user sign in?")
   }
   
   
@@ -19,6 +21,9 @@ function App() {
       <Router>
         <div className="App">
           <TopNav />
+          <Route exact path="/signin" render={(routerProps) => (
+            <SignIn fetchUser={userSignIn} {...routerProps} />
+          )} />
           <Route exact path="/" render={(routerProps) => <FeedMain /> } />
           <Route exact path="/home" component={<FeedMain />} />
           <Route exact path="/feed" render={(routerProps) => <FeedMain /> } />          
