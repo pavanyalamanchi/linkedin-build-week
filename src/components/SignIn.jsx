@@ -19,7 +19,7 @@ export default class SignIn extends Component {
           alt="LinkedIn"
           className="sign-in-logo" />
           <h4 className="sign-in-text">Welcome to your professional community.</h4>
-          <Form onSubmit={(e) => { this.props.fetchUser(e) }}>
+          <Form onSubmit={(e) => { this.props.fetchUser(e, this.state) }}>
             <Form.Group>
               <Form.Label>Name:</Form.Label>
               <Form.Control 
