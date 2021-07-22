@@ -8,7 +8,7 @@ const SinglePost = (prop) => {
   const [showComment, SetShowComment] = useState(false);
 
   return (
-    <Card>
+    <Card className="w-100">
       <Card.Body className="post-card">
         <Row>
           <div className="post-profile-img">

@@ -1,20 +1,24 @@
-import { Modal, Button } from 'react-bootstrap'
-import React, { useState } from 'react'
+import { Modal, Button } from "react-bootstrap";
+import React, { useState } from "react";
 import { VscEdit } from "react-icons/vsc";
+import EditForm from "./EditForm";
 
 export default function EditDataButton(props) {
-  
-  let [show, setShow] = useState(false)
-  
-  const handleShow = () => { setShow(true) }
-  const handleClose = () => { setShow(false) }
-  
+  let [show, setShow] = useState(false);
+
+  const handleShow = () => {
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
+
   return (
     <>
       <VscEdit
         className="icons experience-fragment-edit-button"
-        onClick={handleShow}>
-       </VscEdit>
+        onClick={handleShow}
+      ></VscEdit>
       <Modal
         {...props}
         show={show}
@@ -29,16 +33,8 @@ export default function EditDataButton(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+          <EditForm exp={props.e} />
         </Modal.Body>
-        <Modal.Footer className="position-absolute bottom-0">
-          <Button onClick={props.onHide}>Save</Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

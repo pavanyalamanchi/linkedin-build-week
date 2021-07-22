@@ -457,8 +457,9 @@ div.modal-header {
 }
 
 div.modal-body {
+  height: 80vh;
   overflow: scroll;
-  padding-bottom: 3.2rem;
+  padding-bottom: 1rem;
 }
 
 button.close span {
@@ -510,15 +511,6 @@ input.form-check-input {
 
 label.form-check-label {
   margin-left: 0.5rem;
-}
-
-div.modal-footer {
-  position: fixed;
-  bottom: 10.5%;
-  left: 24%;
-  right: 25%;
-  width: 50%;
-  background-color: white;
 }
 
 /* feed sidebars */

@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import UploadImage from "./UploadImage";
 
@@ -8,7 +9,7 @@ class AddForm extends Component {
       role: "",
       employmentType: "",
       company: "",
-      location: "",
+      area: "",
       start: { month: "", year: "" },
       end: { month: "", year: "" },
       industry: "",
@@ -30,8 +31,7 @@ class AddForm extends Component {
   Fetch = async (e) => {
     e.preventDefault();
     let userId = "60f53b250efe7800155c34a0";
-
-    let objectPost = {
+    let objectPut = {
       role: this.state.form.role,
       company: this.state.form.company,
       startDate: this.state.form.start.month + this.state.form.start.year,
@@ -39,22 +39,21 @@ class AddForm extends Component {
       description: this.state.form.description,
       area: this.state.form.location,
     };
-
     try {
       const postExp = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
+        `https://striveschool-api.herokuapp.com/api/profile/${this.props.uId}/experiences`,
         {
           headers: {
-            "Content-Type": "application/json",
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+            "Content-Type": "application/json",
           },
-          method: "POST",
-          body: JSON.stringify(objectPost),
+          method: "PUT",
+          body: JSON.stringify(this.state.form),
         }
       );
       if (postExp.ok) {
-        alert("Experience added !");
+        alert("Experience updated !");
       }
     } catch (error) {
       console.log(error);
@@ -63,7 +62,7 @@ class AddForm extends Component {
   render() {
     return (
       <>
-        {console.log(this.state)}
+        {console.log(this.props.exp)}
         <Form
           className="container-form d-flex flex-column align-items-center"
           onSubmit={(e) => this.Fetch(e)}
@@ -73,7 +72,7 @@ class AddForm extends Component {
             <Form.Control
               type="text"
               placeholder="Ex. Retail Sales Manager"
-              defaultValue={this.state.form.role}
+              defaultValue={this.props.exp.role}
               onChange={(e) => {
                 this.HandleInput("role", e.target.value);
               }}
@@ -107,7 +106,7 @@ class AddForm extends Component {
             <Form.Control
               type="text"
               placeholder="Ex. Microsoft"
-              value={this.state.form.company}
+              defaultValue={this.props.exp.company}
               onChange={(e) => {
                 this.HandleInput("company", e.target.value);
               }}
@@ -119,9 +118,9 @@ class AddForm extends Component {
             <Form.Control
               type="text"
               placeholder="Ex. London, United Kingdom"
-              value={this.state.form.location}
+              defaultValue={this.props.exp.area}
               onChange={(e) => {
-                this.HandleInput("location", e.target.value);
+                this.HandleInput("area", e.target.value);
               }}
             />
           </Form.Group>
@@ -335,7 +334,7 @@ class AddForm extends Component {
             <Form.Label>Headline *</Form.Label>
             <Form.Control
               type="text"
-              value={this.state.form.headline}
+              defaultValue={this.props.exp.headline}
               onChange={(e) => {
                 this.HandleInput("headline", e.target.value);
               }}
@@ -350,7 +349,7 @@ class AddForm extends Component {
             <Form.Control
               as="textarea"
               rows={3}
-              value={this.state.form.description}
+              defaultValue={this.props.exp.description}
               onChange={(e) => {
                 this.HandleInput("description", e.target.value);
               }}
