@@ -11,6 +11,7 @@ import {
   import { SiLinkedin } from "react-icons/si";
   import { TiHome, TiMessageTyping } from "react-icons/ti";
   import { BsFillPeopleFill, BsThreeDots } from "react-icons/bs";
+  import {FaSearch} from 'react-icons/fa'
   import { IoNotificationsSharp } from "react-icons/io5";
   import { RiDashboardFill } from "react-icons/ri";
   import { MdWork } from "react-icons/md";
@@ -22,11 +23,12 @@ import {
         <Container fluid className="bg-white">
           <Row>
             <Col>
-              <Container className="mt-n2">
+              <Container className="mt-n2 d-flex">
                 <Navbar className="nav-contain">
-                  <Navbar.Brand href="/feed">
+                  <Navbar.Brand href="/feed" className="d-sm-fill">
                     <SiLinkedin className="in" />
                   </Navbar.Brand>
+                  
                   <Form inline className="d-none d-sm-block">
                     <FormControl
                       type="text"
@@ -35,6 +37,9 @@ import {
                     />
                   </Form>
                   <Nav className="">
+                    <Nav.Link href="/feed" className="d-block d-sm-none">
+                    <FaSearch className="nav-icon hm"/>
+                    </Nav.Link>
                     <Nav.Link href="/feed">
                       <TiHome className="nav-icon hm" />
                       <br />
@@ -60,7 +65,7 @@ import {
                       <br />
                       <span>Notification</span>
                     </Nav.Link>
-                    <Nav.Link href="#pricing" className="d-block d-sm-none">
+                    <Nav.Link href="#pricing" className="d-block d-sm-none" style={{paddingTop: "25px"}}>
                       <BsThreeDots />
                       <span>more</span>
                     </Nav.Link>

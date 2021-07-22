@@ -67,10 +67,6 @@ span {
   .nav-link span {
     display: none;
   }
-  .navbar-nav {
-    margin-left: 20px;
-    background-color: #f3f2ee;
-  }
   .nav-contain {
     background-color: white;
     height: 62px;
@@ -150,7 +146,7 @@ span {
     display: none;
   }
   .navbar-nav {
-    margin-left: 20px;
+    margin-left: 5px;
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
