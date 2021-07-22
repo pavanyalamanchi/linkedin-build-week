@@ -26,6 +26,7 @@ const submitData = async () => {
       })
       if(response.ok){
           alert('Data Updated!')
+          props.fetch()
       }
       else{
           console.log(response.status)
