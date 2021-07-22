@@ -1,16 +1,41 @@
-import { Modal, Button, Col, Form } from "react-bootstrap";
-import { useState } from "react";
+import { Modal, Button, Col } from "react-bootstrap";
+import { useState, useRef } from "react";
 import { AiOutlineCamera } from "react-icons/ai";
 
 const ProfileImageUpload = (props) => {
   const [lgShow, setLgShow] = useState(false);
 
-  const uploadPhoto = () => {
-    <Form.Group controlId="formFile" className="mb-3">
-    <Form.Label>Default file input example</Form.Label>
-    <Form.Control type="file" />
-  </Form.Group>
-  }
+const input = useRef()
+const fileUpload = async (e) => {
+    try {
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append("profile", file);
+      console.log(formData)
+      const userId = '60f53b250efe7800155c34a0';
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${userId}/picture`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
+        }
+        }
+      );
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData);
+        //alert('successfully updated')
+        props.fetch()
+      } else {
+        console.log(response);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   return (
     <>
@@ -55,8 +80,10 @@ const ProfileImageUpload = (props) => {
         <Modal.Footer>
           <Button className="footer-button">Use Camera</Button>
           {/*<input type="file"></input>*/}
-         
-          <Button type='file'>Upload Photo</Button>
+          <input ref={input} hidden type="file" accept='image/png' onChange={fileUpload}></input>
+          <Button onClick={() => {
+          input.current.click();
+        }}>Upload Photo</Button>
         </Modal.Footer>
       </Modal>
     </>

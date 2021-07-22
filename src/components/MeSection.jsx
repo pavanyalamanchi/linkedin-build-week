@@ -44,7 +44,7 @@ const MainSection = () => {
             <div className="cover-image">
               <Card.Img className="cover-img" variant="top" src={cover} />
             </div>
-            {<ProfileImage profileData={profileData}/>}
+            {<ProfileImage profileData={profileData} fetch={fetchData}/>}
 
             <Card.Body className="user-info-body">
               <Row className="justify-content-end">
