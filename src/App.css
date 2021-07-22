@@ -527,14 +527,14 @@ label.form-check-label {
     margin-left: 0.5rem;
 }
 
-div.modal-footer {
-    position: fixed;
+
+/*div.modal-footer {
     bottom: 10.5%;
     left: 24%;
     right: 25%;
     width: 50%;
     background-color: white;
-}
+}*/
 
 .profile-pic {
     height: 10.5rem;
