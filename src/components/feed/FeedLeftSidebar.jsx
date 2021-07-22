@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import FeedSidebarSections from "./FeedSidebarSections";
+import React, { Component } from 'react'
+import FeedSidebarProfile from './FeedSidebarProfile'
+import FeedSiderbarHashtags from './FeedSiderHashtags'
 
 export default class FeedLeftSidebar extends Component {
-  render() {
-    return (
-      <>
-        <div className="sidebar-main-container">
-          <FeedSidebarSections userID={"123123"} />
-        </div>
-      </>
-    );
-  }
+	render() {
+		return (
+			<>
+			<FeedSidebarProfile userID={"123123"}/>
+			<FeedSiderbarHashtags/>
+      		</>
+		)
+	}
 }

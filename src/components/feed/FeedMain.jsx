@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import FeedLeftSidebar from "./FeedLeftSidebar";
-import Sidebar from "../Sidebar";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+import FeedLeftSidebar from './FeedLeftSidebar'
+import FeedRightSidebar from './FeedRightSidebar'
+import { withRouter } from 'react-router-dom'
 import PostsContainer from "./PostsContainer";
 import NewPost from "./NewPost";
+
 
 class FeedMain extends Component {
   render() {
@@ -12,16 +13,12 @@ class FeedMain extends Component {
       <div>
         <Container>
           <Row>
-            <Col sm={3}>
-              <FeedLeftSidebar />
-            </Col>
-            <Col sm={5}>
+            <Col sm={3} className="rightSidebar"> <FeedLeftSidebar /></Col>
+            <Col sm={5}> 
               <NewPost />
               <PostsContainer />
-            </Col>
-            <Col sm={4}>
-              <Sidebar />
-            </Col>
+              </Col>
+            <Col sm={4}> <FeedRightSidebar /></Col>
           </Row>
         </Container>
       </div>
