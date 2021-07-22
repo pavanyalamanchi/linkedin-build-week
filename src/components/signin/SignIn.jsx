@@ -28,7 +28,6 @@ class SignIn extends Component {
   render() {
 		return (
 			<div className="sign-in-screen">
-        {console.log("SignIn Component - Signed in?", this.props.isSignedIn)}
         <div className="sign-in-form">
         <img 
           src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" 
@@ -51,6 +50,12 @@ class SignIn extends Component {
                 placeholder="API key here"
                 onChange={(e) => this.setState({ API: e.target.value })} />
             </Form.Group>
+            {
+              this.props.signInError ? (
+                <Alert variant="danger">
+                  Email or password is incorrect.
+                </Alert> ) : null
+            }
             <Button variant="primary" type="submit" className="sign-in-button default-blue-bg">
               Sign in
             </Button>
