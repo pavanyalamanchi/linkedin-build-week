@@ -7,46 +7,90 @@ import Footer from './components/Footer'
 import TopNav from './components/TopNav'
 import ProfileSection from './components/ProfileSection'
 import FeedMain from './components/feed/FeedMain'
-import SignIn from './components/SignIn'
+import SignIn from './components/signin/SignIn'
+import Redirect from './components/signin/Redirect'
 
 function App() {
-  let [user, setUser] = useState(null)
+  const localUser = JSON.parse(localStorage.getItem("user"))
+  const [user, setUser] = useState({ localUser })
+  const [signedIn, setSignedIn] = useState(false)
   
-  const userSignIn = (e, userData) => {
+  const fetchUser = async (e, userSignInData) => {
+    console.log("user sign in fetch")
     e.preventDefault()
-    console.log("calling user sign in!")
-    console.log("USER DATA APP API:", userData.API)
-    
-    let APIKEY = `Bearer ${userData.API}`
-    console.log(APIKEY)
-    
-    fetch(`https://striveschool-api.herokuapp.com/api/profile/me`, {
-      headers: {
-        Authorization:APIKEY
+    let APIKEY = `Bearer ${userSignInData.API}`
+    try {
+      const userFetch = await fetch(`https://striveschool-api.herokuapp.com/api/profile/me`, {
+        headers: { Authorization:APIKEY }
+      })
+      const data = await userFetch.json()
+      
+      if (authenticateUser(userSignInData, data) === true) {
+        setUser(data)
+        setSignedIn(true)
+        localStorage.setItem("user", JSON.stringify(data))
+      } else {
+        setUser(null)
+        setSignedIn(false)
       }
-    })
-    .then(res => res.json())
-    .then(data => {
-      setUser(data)
-    })
+      
+    } catch (e) {
+      console.log("App.js Error!", e)
+      setSignedIn(false)
+    }
   }
+  
+  const authenticateUser = (form, fetch) => {
+    if (form.email === fetch.email) {
+      setSignedIn(true)
+      setUser(fetch)
+      return true
+    } else {
+      return false
+    }
+  }
+  
+  useEffect(() => {
+    setUser(localUser)
+    if (user !== null) {
+      setSignedIn(true)
+    }
+  }, [])
   
   return (
     <>
+      { console.log("user:", user) }
+      { console.log("signed in?", signedIn)}
       <Router>
         <div className="App">
-          <TopNav />
-          <Route exact path="/signin" render={(routerProps) => (
-            <SignIn fetchUser={userSignIn} {...routerProps} />
+          <Route exact path="/signin" render={routerProps => (
+            <>
+              <SignIn fetchUser={fetchUser} isSignedIn={signedIn} {...routerProps}/>
+              <Footer />
+            </>
           )} />
-          <Route exact path="/profile/:id" render={routerProps => {
-            <ProfileSection {...routerProps} user={user}/> 
-          }} />
-          <Route exact path="/" render={(routerProps) => <FeedMain user={user}/> } />
-          <Route exact path="/home" component={<FeedMain user={user}/>} />
-          <Route exact path="/feed" render={(routerProps) => <FeedMain user={user}/> } />          
-          <Route exact path="/me" render={(routerProps) => <MeSection user={user}/> } />
-          <Footer />
+          <Route exact path="/profile/:id" render={routerProps => (
+            <>
+              <TopNav user={user}/>
+              <ProfileSection {...routerProps} user={user}/> 
+              <Footer />
+            </> )}/>
+          <Route exact path="/" render={routerProps => (
+            <>
+              <TopNav user={user}/>
+              <Redirect />
+              <Footer />
+            </> )}/>
+          <Route exact path="/feed" render={routerProps => (
+            <>
+              <TopNav user={user}/>
+              <FeedMain user={user}/>           
+            </> )} />
+          <Route exact path="/me" render={routerProps => (
+            <>
+              <TopNav user={user}/>
+              <MeSection user={user}/>
+            </> )}/>
         </div>
       </Router>
     </>
