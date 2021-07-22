@@ -4,6 +4,7 @@ import { MdEdit } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const ProfileEdit = (props) => {
+
   const [Lgshow, setLgShow] = useState(false);
 
   const handleClose = () => setLgShow(false);
@@ -31,7 +32,7 @@ const ProfileEdit = (props) => {
                     className="input-value"
                     type="email"
                     placeholder="Enter First Name"
-                    value={props.firstName}
+                    defaultValue={props.firstName}
                     required
                   />
                 </Form.Group>
@@ -43,7 +44,7 @@ const ProfileEdit = (props) => {
                     className="input-value"
                     type="text"
                     placeholder="Enter Last Name"
-                    value={props.lastName}
+                    defaultValue={props.lastName}
                     required
                   />
                 </Form.Group>
@@ -130,7 +131,7 @@ const ProfileEdit = (props) => {
                     className="input-value-bottom"
                     type="email"
                     placeholder="Location"
-                    value={"props.country.split(',')[1]"}
+                    value={props.country}
                     required
                   />
                 </Form.Group>
@@ -141,7 +142,7 @@ const ProfileEdit = (props) => {
                     className="input-value-bottom"
                     type="email"
                     placeholder="Locations"
-                    value={"props.country.split(',')[0]"}
+                    value={props.country}
                   />
                 </Form.Group>
 
