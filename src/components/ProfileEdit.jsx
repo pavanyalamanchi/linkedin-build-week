@@ -9,23 +9,10 @@ const ProfileEdit = (props) => {
 
 
   const [headerData] = useState(
-      {
-          name:props.profileData.name,
-          surname:props.profileData.surname,
-          bio:props.profileData.bio,
-          area:props.profileData.area,
-         title:props.profileData.title,
-         email:props.profileData.email
-      }
+      props.profileData
   )
 
-
-
-  
-  const handleShow = () => setLgShow(true);
-
-
-  
+const handleShow = () => setLgShow(true);
 
 const submitData = async () => {
     try {
@@ -75,7 +62,7 @@ const submitData = async () => {
                     className="input-value"
                     type="email"
                     placeholder="Enter First Name"
-                    value={headerData.name}
+                    defaultValue={headerData.name}
                     required
                     onChange={(e)=>{
                         headerData.name=e.target.value;
@@ -90,7 +77,7 @@ const submitData = async () => {
                     className="input-value"
                     type="text"
                     placeholder="Enter Last Name"
-                    value={headerData.surname}
+                    defaultValue={headerData.surname}
                     required
                     onChange={(e)=>{
                         headerData.surname = e.target.value
@@ -143,7 +130,7 @@ const submitData = async () => {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Headline *</Form.Label>
-              <Form.Control className="input-value" as="textarea" rows={2} value={headerData.bio} required onChange={(e)=>{
+              <Form.Control className="input-value" as="textarea" rows={2} defaultValue={headerData.bio} required onChange={(e)=>{
                         headerData.bio=e.target.value
                     }}/>
             </Form.Group>
@@ -182,7 +169,7 @@ const submitData = async () => {
                     className="input-value-bottom"
                     type="email"
                     placeholder="Location"
-                    value={headerData.area}
+                    defaultValue={headerData.area}
                     required
                     onChange={(e)=>{
                         headerData.area=e.target.value
