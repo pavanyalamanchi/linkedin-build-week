@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import FeedSidebarProfile from './FeedSidebarProfile'
 import FeedSiderbarHashtags from './FeedSiderHashtags'
 
-export default class FeedLeftSidebar extends Component {
-	render() {
-		return (
-			<>
-			<FeedSidebarProfile userID={"123123"}/>
+export default function FeedLeftSidebar (props) {
+
+	return (
+		<>
+			<FeedSidebarProfile user={props.user}/>
 			<FeedSiderbarHashtags/>
-      		</>
-		)
-	}
+    </>
+	)
+
 }
