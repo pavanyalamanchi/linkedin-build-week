@@ -8,10 +8,10 @@ import cover from "../assets/cover.jpg";
 
 const MainSection = () => {
   const [profileData, setProfileData] = useState("");
-  let country,city=""
-  if(profileData !==""){
-    city=profileData.area.split(',')[0]
-    country=profileData.area.split(',')[1]
+  let country,city= ""
+  if (profileData !== ""){
+    city = profileData.area.split(',')[0]
+    country = profileData.area.split(',')[1]
   }
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +25,9 @@ const MainSection = () => {
             },
           }
         );
+        
         if (response.ok) {
-          let resp = await response.json();
+        let resp = await response.json();
           setProfileData(resp);
           console.log("fetch", resp);
         } else {

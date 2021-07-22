@@ -5,43 +5,31 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 const ProfileEdit = (props) => {
   const [Lgshow, setLgShow] = useState(false);
+  const [headerData] = useState(props.profileData)
 
+  const handleShow = () => setLgShow(true);
 
-
-  const [headerData] = useState(
-      props.profileData
-  )
-
-const handleShow = () => setLgShow(true);
-
-const submitData = async () => {
+  const submitData = async () => {
     try {
-        let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/',{
-          method: 'PUT',
-          body: JSON.stringify(headerData),
-          headers: {
-              'Content-Type': 'application/json',
-              Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
-          }
+      let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/',{
+        method: 'PUT',
+        body: JSON.stringify(headerData),
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
+        }
       })
-      if(response.ok){
-          alert('Data Updated!')
+      if(response.ok) { 
+        alert('Data Updated!') 
+      } else { 
+        console.log(response.status) 
       }
-      else{
-          console.log(response.status)
-      }
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-
-
+    } catch (error) { console.log(error) }
+    console.log(headerData)
+  }
 
   return (
     <>
-    {console.log(headerData.name)}
-    
       <MdEdit size="1x" className="svg-edit" onClick={handleShow} />
       <Modal
         show={Lgshow}
@@ -80,7 +68,7 @@ const submitData = async () => {
                     defaultValue={headerData.surname}
                     required
                     onChange={(e)=>{
-                        headerData.surname = e.target.value
+                      headerData.surname = e.target.value
                     }}
                   />
                 </Form.Group>
