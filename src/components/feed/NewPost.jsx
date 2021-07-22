@@ -6,7 +6,8 @@ import { HiOutlinePhotograph } from "react-icons/hi";
 import { AiFillPlaySquare } from "react-icons/ai";
 import { RiCalendarEventFill } from "react-icons/ri";
 import { RiArticleLine } from "react-icons/ri";
-const NewPost = () => {
+
+const NewPost = (props) => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
@@ -14,7 +15,7 @@ const NewPost = () => {
       <Card className="mt-2 w-100 mb-0 newPost">
         <Card.Body>
           <div className="d-flex">
-            <Image src="https://bit.ly/3zegycw" className="elon mt-0 mr-2" />
+            <Image src="" className="elon mt-0 mr-2" />
 
             <FormControl
               placeholder="Post here"
