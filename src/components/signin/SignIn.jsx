@@ -1,18 +1,34 @@
 import React, { Component } from 'react'
-import { Form, Button} from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 
-export default class SignIn extends Component {
+class SignIn extends Component {
 	state = {
-    name: null,
+    email: null,
     API: null,
-    userData: null
+    userData: null,
+    signedIn: this.props.isSignedIn
+  }
+  
+  componentDidMount = () => {
+    localStorage.clear()
+    if (this.props.isSignedIn === true){
+      this.props.history.push("/feed")
+    }
+  }
+  
+  componentDidUpdate = () => {
+    console.log("signin - componentDidUpdate")
+    if (this.props.isSignedIn === true) {
+      console.log("REDIRECTING!")
+      this.props.history.push("/feed")
+    }
   }
   
   render() {
-    {console.log("this.state", this.state)}
-    {console.log("this.props", this.props)}
 		return (
 			<div className="sign-in-screen">
+        {console.log("SignIn Component - Signed in?", this.props.isSignedIn)}
         <div className="sign-in-form">
         <img 
           src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" 
@@ -21,11 +37,11 @@ export default class SignIn extends Component {
           <h4 className="sign-in-text">Welcome to your professional community.</h4>
           <Form onSubmit={(e) => { this.props.fetchUser(e, this.state) }}>
             <Form.Group>
-              <Form.Label>Name:</Form.Label>
+              <Form.Label>Email:</Form.Label>
               <Form.Control 
-                type="name" 
-                placeholder="LinkedIn Profile Name" 
-                onChange={(e) => this.setState({ name: e.target.value })}/>
+                type="email" 
+                placeholder="Email" 
+                onChange={(e) => this.setState({ email: e.target.value })}/>
             </Form.Group>
             
             <Form.Group>
@@ -35,7 +51,6 @@ export default class SignIn extends Component {
                 placeholder="API key here"
                 onChange={(e) => this.setState({ API: e.target.value })} />
             </Form.Group>
-            
             <Button variant="primary" type="submit" className="sign-in-button default-blue-bg">
               Sign in
             </Button>
@@ -45,3 +60,5 @@ export default class SignIn extends Component {
 		)
 	}
 }
+
+export default withRouter(SignIn)
