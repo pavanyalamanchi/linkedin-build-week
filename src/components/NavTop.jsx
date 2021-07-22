@@ -4,33 +4,25 @@ import { Container, Row, Col, Button, Image, Card } from "react-bootstrap";
 import "../second-nav.css";
 
 const NavTop = () => {
-  //   listner = null;
-  const [nav, setNav] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", handleScrol);
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      window.removeEventListener("scroll");
-    };
-  }, []);
-  const handleScrol = () => {
-    if (window.pageYOffset > 50) {
-      if (!nav) {
-        setNav({ nav: true });
+  const [scrolled,setScrolled]=useState(false);
+  const handleScroll=() => {
+      const offset=window.scrollY;
+      if(offset > 200 ){
+        setScrolled(true);
       }
-    } else {
-      if (nav) {
-        setNav({ nav: false });
+      else{
+        setScrolled(false);
       }
     }
-  };
+  
+    useEffect(() => {
+      window.addEventListener('scroll',handleScroll)
+    })
+
+
   return (
     <>
-      <Container
-        fluid
-        className={`bg-white contains border d-none ${nav && "d-block"}`}
+      <Container fluid className={`bg-white contains border  ${scrolled ? 'd-block scrolled' : 'd-none'}`}
       >
         <Container className="bg-white">
           <Row

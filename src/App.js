@@ -8,6 +8,7 @@ import TopNav from './components/TopNav'
 import ProfileSection from './components/ProfileSection'
 import FeedMain from './components/feed/FeedMain'
 import SignIn from './components/SignIn'
+import NavTop from './components/NavTop'
 
 function App() {
   let [user, setUser] = useState(null)
@@ -36,6 +37,7 @@ function App() {
       <Router>
         <div className="App">
           <TopNav />
+          <NavTop />
           <Route exact path="/signin" render={(routerProps) => (
             <SignIn fetchUser={userSignIn} {...routerProps} />
           )} />
