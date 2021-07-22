@@ -6,8 +6,7 @@ import AddDataButton from "./AddDataButton";
 
 export default function ExperienceSection(props) {
   const [experiences, setExperiences] = useState(null);
-  console.log("Should be null?", experiences);
-
+  
   useEffect(() => {
     fetchExperiences();
   }, []);
@@ -33,7 +32,7 @@ export default function ExperienceSection(props) {
   }
 
   async function fetchExperiences() {
-    const userId = "60f53b250efe7800155c34a0";
+    const userId = props.user.id
     try {
       const fetchExp = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
@@ -41,7 +40,7 @@ export default function ExperienceSection(props) {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+              "Bearer ",
           },
         }
       );
