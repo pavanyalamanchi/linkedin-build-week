@@ -74,13 +74,13 @@ import {
                       className="elon d-none d-sm-block"
                     />
                   </Nav>
-                  <div className="vl ml-1 d-none d-sm-block"></div>
-                  <Nav.Link href="#pricing" className="d-none d-sm-block" style={{ color: "gray" }}>
+                  <div className="vl ml-1 d-none d-lg-block"></div>
+                  <Nav.Link href="#pricing" className="d-none d-lg-block" style={{ color: "gray" }}>
                     <RiDashboardFill className="nav-icon" />
                     <br />
                     <span>Work</span>
                   </Nav.Link>
-                  <p className="premium d-none d-sm-block">
+                  <p className="premium d-none d-lg-block">
                     Try Premium Free <br /> For 1 Month
                   </p>
                 </Navbar>
