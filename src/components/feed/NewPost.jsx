@@ -11,7 +11,7 @@ const NewPost = () => {
 
   return (
     <Row>
-      <Card className="mt-2 w-100 mb-0">
+      <Card className="mt-2 w-100 mb-0 newPost">
         <Card.Body>
           <div className="d-flex">
             <Image src="https://bit.ly/3zegycw" className="elon mt-0 mr-2" />

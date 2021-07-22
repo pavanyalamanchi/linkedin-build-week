@@ -738,3 +738,9 @@ div.card-body.post-card {
 textarea.form-control.post-comment-textarea {
   border-radius: 20px;
 }
+.feedMain{
+  padding: 0px !important;
+}
+.newPost{
+  margin:0 15px !important;
+}
