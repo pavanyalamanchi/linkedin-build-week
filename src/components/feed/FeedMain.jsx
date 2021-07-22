@@ -3,8 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import FeedLeftSidebar from "./FeedLeftSidebar";
 import Sidebar from "../Sidebar";
 import { withRouter } from "react-router-dom";
-import PostsContainer from "../PostsContainer";
-import NewPost from "../NewPost";
+import PostsContainer from "./PostsContainer";
+import NewPost from "./NewPost";
 
 class FeedMain extends Component {
   render() {

@@ -1,5 +1,5 @@
 import SinglePost from "./SinglePost";
-import Loading from "./Loading";
+import Loading from "../Loading";
 import { Component } from "react";
 
 class PostsContainer extends Component {

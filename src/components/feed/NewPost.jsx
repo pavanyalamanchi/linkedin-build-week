@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, Row, Col, Image, FormControl, CardGroup } from "react-bootstrap";
-import "../post.css";
+import "../../post.css";
 import CenteredModal from "./PostModal";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { AiFillPlaySquare } from "react-icons/ai";

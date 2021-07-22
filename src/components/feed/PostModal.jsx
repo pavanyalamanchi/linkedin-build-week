@@ -1,7 +1,7 @@
-import "../post.css";
+import "../../post.css";
 import { useState } from "react";
 import { Modal, Image, Button, Form } from "react-bootstrap";
-import PrivacyModal from "./PrivacyModal";
+import PrivacyModal from "../PrivacyModal";
 import { BiWorld } from "react-icons/bi";
 import { VscTriangleDown } from "react-icons/vsc";
 import { IoDocumentTextSharp } from "react-icons/io5";
