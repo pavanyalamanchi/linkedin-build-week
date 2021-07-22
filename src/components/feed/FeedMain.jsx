@@ -14,7 +14,7 @@ class FeedMain extends Component {
         <Container>
           <Row>
             <Col sm={3} className="rightSidebar"> <FeedLeftSidebar /></Col>
-            <Col sm={5}> 
+            <Col sm={5} className="feedMain"> 
               <NewPost />
               <PostsContainer />
               </Col>

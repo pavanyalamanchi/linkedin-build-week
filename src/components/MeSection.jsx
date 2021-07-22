@@ -8,11 +8,13 @@ import cover from "../assets/cover.jpg";
 
 const MainSection = () => {
   const [profileData, setProfileData] = useState("");
+
   let country,city= ""
   if (profileData !== ""){
     city = profileData.area.split(',')[0]
     country = profileData.area.split(',')[1]
   }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -54,7 +56,7 @@ const MainSection = () => {
 
             <Card.Body className="user-info-body">
               <Row className="justify-content-end">
-                {profileData &&  <ProfileEdit firstName={profileData.name} lastName={profileData.surname} headline={profileData.bio} city={city} country={country} industry={profileData.title} email={profileData.email}/>}
+                  {profileData && <ProfileEdit profileData={profileData}/>}
               </Row>
               <Row className="justify-content-space-between rows-col-md-6 rows-col-sm-12 rows-col-sx-12 ">
                 <Col>

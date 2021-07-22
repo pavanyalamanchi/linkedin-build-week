@@ -51,7 +51,7 @@ class PostsContainer extends Component {
   render() {
     return (
       <div className="all-posts-container">
-        <hr />
+        <hr style={{margin:"10px 0px"}} />
         {this.state.loading && <Loading />}
         {this.state.display &&
           this.state.posts
