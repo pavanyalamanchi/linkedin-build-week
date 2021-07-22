@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Component } from "react";
+import FeedSidebarSections from "./FeedSidebarSections";
 
-const FeedLeftSidebar = () => {
+export default class FeedLeftSidebar extends Component {
+  render() {
     return (
-        <div>
-            
+      <>
+        <div className="sidebar-main-container">
+          <FeedSidebarSections userID={"123123"} />
         </div>
-    )
+      </>
+    );
+  }
 }
-
-export default FeedLeftSidebar

@@ -1,27 +1,32 @@
-import React, { Component } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import FeedLeftSidebar from './FeedLeftSidebar'
-import { withRouter } from 'react-router-dom'
+import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import FeedLeftSidebar from "./FeedLeftSidebar";
+import Sidebar from "../Sidebar";
+import { withRouter } from "react-router-dom";
+import PostsContainer from "./PostsContainer";
+import NewPost from "./NewPost";
 
 class FeedMain extends Component {
-  
-  
   render() {
-    {console.log("this.props", this.props)}
     return (
-    	<div>
+      <div>
         <Container>
           <Row>
-            <Col sm={3}> <FeedLeftSidebar /></Col>
-            <Col sm={5}> 
-              
+            <Col sm={3}>
+              <FeedLeftSidebar />
             </Col>
-            <Col sm={4}> <FeedLeftSidebar /></Col>
+            <Col sm={5}>
+              <NewPost />
+              <PostsContainer />
+            </Col>
+            <Col sm={4}>
+              <Sidebar />
+            </Col>
           </Row>
         </Container>
       </div>
-    )
+    );
   }
 }
 
-export default withRouter(FeedMain)
+export default withRouter(FeedMain);
