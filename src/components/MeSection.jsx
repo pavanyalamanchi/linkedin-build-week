@@ -6,15 +6,8 @@ import ProfileEdit from "./ProfileEdit";
 import ExperienceSection from './ExperienceSection'
 import cover from "../assets/cover.jpg";
 
-const MainSection = () => {
+const MainSection = (props) => {
   const [profileData, setProfileData] = useState("");
-
-  let country,city= ""
-  if (profileData !== ""){
-    city = profileData.area.split(',')[0]
-    country = profileData.area.split(',')[1]
-  }
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,7 +16,7 @@ const MainSection = () => {
           {
             headers: {
               Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+                "Bearer ",
             },
           }
         );
@@ -39,7 +32,7 @@ const MainSection = () => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   return (
     <Container className="main-body-container">
       <Row className="justify-content-center">
@@ -49,29 +42,29 @@ const MainSection = () => {
               <Card.Img className="cover-img" variant="top" src={cover} />
             </div>
             <img
-              src={profileData.image}
+              src={props.user.image}
               alt="#"
               className="profile-pic rounded-circle"
             />
 
             <Card.Body className="user-info-body">
               <Row className="justify-content-end">
-                  {profileData && <ProfileEdit profileData={profileData}/>}
+                  {props.user && <ProfileEdit profileData={props.user}/>}
               </Row>
               <Row className="justify-content-space-between rows-col-md-6 rows-col-sm-12 rows-col-sx-12 ">
                 <Col>
                   <div className="d-flex mt-3">
                     <h2 className="member-name">
-                      {profileData.name} {profileData.surname}{" "}
+                      {props.user.name} {props.user.surname}{" "}
                       <span>• 1st</span>
                     </h2>
                   </div>
                   <div>
-                    <h6 className="member-position">{profileData.title}</h6>
+                    <h6 className="member-position">{props.user.title}</h6>
                   </div>
                   <div className="d-flex">
                     <p className="text-muted">
-                      {profileData.area} ·
+                      {props.user.area} ·
                       <a
                         href=".sample"
                         alt="#"
@@ -125,7 +118,7 @@ const MainSection = () => {
 
               <h5 className="profile-body-section-header" >About</h5>
               <p>
-                {profileData.bio}
+                {props.user.bio}
               </p>
 
             </Card.Body>
@@ -153,7 +146,7 @@ const MainSection = () => {
                           <h5 className="activity-body-header">
                             Simulation gear reducer
                           </h5>
-                          <p className="card-text">Elon Musk shared this </p>
+                          <p className="card-text">{props.user.name} shared this </p>
                           <p className="card-text">
                             <small className="text-muted">3 React</small>
                             <small className="text-muted">1 Comment</small>
@@ -247,7 +240,7 @@ const MainSection = () => {
           </Card>
           
           <Card>
-            <ExperienceSection />
+            <ExperienceSection user={props.user}/>
           </Card>
           
         </Col>
