@@ -49,7 +49,7 @@ const MainSection = () => {
 
             <Card.Body className="user-info-body">
               <Row className="justify-content-end">
-                  <ProfileEdit firstName={profileData.name} lastName={profileData.surname} headline={profileData.bio} country={profileData.area} industry={profileData.title}/>
+                  {profileData && <ProfileEdit profileData={profileData}/>}
               </Row>
               <Row className="justify-content-space-between rows-col-md-6 rows-col-sm-12 rows-col-sx-12 ">
                 <Col>

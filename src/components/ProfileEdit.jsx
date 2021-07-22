@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { Button, Modal, Form, Row, Col } from "react-bootstrap";
 import { MdEdit } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -6,11 +6,42 @@ import { AiOutlinePlus } from "react-icons/ai";
 const ProfileEdit = (props) => {
   const [Lgshow, setLgShow] = useState(false);
 
-  const handleClose = () => setLgShow(false);
-  const handleShow = () => setLgShow(true);
+
+
+  const [headerData] = useState(
+      props.profileData
+  )
+
+const handleShow = () => setLgShow(true);
+
+const submitData = async () => {
+    try {
+        let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/',{
+          method: 'PUT',
+          body: JSON.stringify(headerData),
+          headers: {
+              'Content-Type': 'application/json',
+              Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw"
+          }
+      })
+      if(response.ok){
+          alert('Data Updated!')
+      }
+      else{
+          console.log(response.status)
+      }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
 
   return (
     <>
+    {console.log(headerData.name)}
+    
       <MdEdit size="1x" className="svg-edit" onClick={handleShow} />
       <Modal
         show={Lgshow}
@@ -18,11 +49,11 @@ const ProfileEdit = (props) => {
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className='modal-header'>
           <Modal.Title className="modal-title">Edit Intro</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form className='edit-form'>
             <Row>
               <Col className="col-lg-6">
                 <Form.Group className="mb-1" controlId="formGroupEmail">
@@ -31,8 +62,11 @@ const ProfileEdit = (props) => {
                     className="input-value"
                     type="email"
                     placeholder="Enter First Name"
-                    value={props.firstName}
+                    defaultValue={headerData.name}
                     required
+                    onChange={(e)=>{
+                        headerData.name=e.target.value;
+                    }}
                   />
                 </Form.Group>
               </Col>
@@ -43,8 +77,11 @@ const ProfileEdit = (props) => {
                     className="input-value"
                     type="text"
                     placeholder="Enter Last Name"
-                    value={props.lastName}
+                    defaultValue={headerData.surname}
                     required
+                    onChange={(e)=>{
+                        headerData.surname = e.target.value
+                    }}
                   />
                 </Form.Group>
               </Col>
@@ -93,7 +130,9 @@ const ProfileEdit = (props) => {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Headline *</Form.Label>
-              <Form.Control className="input-value" as="textarea" rows={2} value={props.headline} required/>
+              <Form.Control className="input-value" as="textarea" rows={2} defaultValue={headerData.bio} required onChange={(e)=>{
+                        headerData.bio=e.target.value
+                    }}/>
             </Form.Group>
             <Row className="profile-edit-pos">
               <AiOutlinePlus />
@@ -130,8 +169,11 @@ const ProfileEdit = (props) => {
                     className="input-value-bottom"
                     type="email"
                     placeholder="Location"
-                    value={"props.country.split(',')[1]"}
+                    defaultValue={headerData.area}
                     required
+                    onChange={(e)=>{
+                        headerData.area=e.target.value
+                    }}
                   />
                 </Form.Group>
 
@@ -141,7 +183,7 @@ const ProfileEdit = (props) => {
                     className="input-value-bottom"
                     type="email"
                     placeholder="Locations"
-                    value={"props.country.split(',')[0]"}
+                    
                   />
                 </Form.Group>
 
@@ -179,7 +221,7 @@ const ProfileEdit = (props) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button className='edit-button text-white' onClick={handleClose}>
+          <Button className='edit-button text-white' onClick={submitData} >
             Save
           </Button>
         </Modal.Footer>
