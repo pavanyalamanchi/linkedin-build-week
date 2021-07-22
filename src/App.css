@@ -1,7 +1,7 @@
 .default-blue {
   color: #004182;
 }
-body{
+body {
   font-size: 14px !important;
 }
 .profile-pic {
@@ -523,72 +523,72 @@ div.modal-footer {
 
 /* feed sidebars */
 
-.siderbarcover{
+.siderbarcover {
   height: 54px;
   background-size: cover;
   background-position: center;
   border-top-left-radius: 11px;
   border-top-right-radius: 11px;
 }
-hr{
+hr {
   margin-left: -20px;
   margin-right: -20px;
 }
-.leftSidebarCardBody a:hover{
+.leftSidebarCardBody a:hover {
   background-color: #ced4da;
 }
-.hastags{
+.hastags {
   list-style: none;
   padding-left: 0px;
 }
-.hastags li{
+.hastags li {
   line-height: 20px;
 }
-.hastags li span{
+.hastags li span {
   padding-left: 10px;
   font-weight: 500;
 }
-.sidebarProfilePhoto{
+.sidebarProfilePhoto {
   height: 64px;
   width: 64px;
   position: absolute;
   border: 2px solid white;
 }
 .card-footer {
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   background-color: rgb(255 255 255 / 3%);
   border-top: 1px solid rgb(255 255 255 / 13%);
 }
-.topCourseList{
+.topCourseList {
   list-style: none;
   padding-left: 0px;
 }
-.topCourseList li a{
+.topCourseList li a {
   color: black;
   font-weight: 500;
 }
-.topCourseList li a span{
+.topCourseList li a span {
   display: block;
 }
-.topCourseList li a:hover{
+.topCourseList li a:hover {
   text-decoration: none;
 }
-.topCourseList li:hover{
+.topCourseList li:hover {
   background-color: lightgray;
 }
-.sidebarFooter{
+.sidebarFooter {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-.sidebarFooter li{
+.sidebarFooter li {
   display: flex;
-  margin: .4rem .8rem;
+  margin: 0.4rem 0.8rem;
 }
-.sidebarFooter li a{
-  color: #6c757d!important;
+.sidebarFooter li a {
+  color: #6c757d !important;
 }
 
 /* =============== FEED POSTS ============== */
@@ -690,4 +690,51 @@ div.row.post-buttons-container span {
 
 div.col-1 {
   padding: 0.2rem !important;
+}
+
+div.card-body.post-card {
+  padding: 0.5rem 1.5rem 0 1.5rem !important;
+}
+
+.post-like,
+.post-comment,
+.post-share,
+.post-send {
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.post-like span,
+.post-comment span,
+.post-share span,
+.post-send span {
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+
+.post-like:hover,
+.post-comment:hover,
+.post-share:hover,
+.post-send:hover {
+  background-color: #66666625;
+  border-radius: 5px;
+}
+
+.post-comment-img {
+  width: 15%;
+}
+
+.post-textarea {
+  width: 85%;
+}
+
+.post-comment-area img {
+  width: 3rem !important;
+}
+
+textarea.form-control.post-comment-textarea {
+  border-radius: 20px;
 }
