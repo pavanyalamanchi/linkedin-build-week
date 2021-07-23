@@ -152,7 +152,7 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
                           <p className="card-text">
-                            <small className="text-muted">3 React</small>
+                            <small className="text-muted pr-1">3 React</small>
                             <small className="text-muted">1 Comment</small>
                           </p>
                         </div>
@@ -175,7 +175,7 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
                           <p className="card-text">
-                            <small className="text-muted">3 React</small>
+                            <small className="text-muted pr-1">3 React</small>
                             <small className="text-muted">1 Comment</small>
                           </p>
                         </div>
@@ -200,7 +200,7 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this</p>
                           <p className="card-text">
-                            <small className="text-muted">3 React</small>
+                            <small className="text-muted pr-1">3 React</small>
                             <small className="text-muted">1 Comment</small>
                           </p>
                         </div>
@@ -223,7 +223,7 @@ const MainSection = () => {
                           </h5>
                           <p className="card-text">Elon Musk shared this </p>
                           <p className="card-text">
-                            <small className="text-muted">3 React</small>
+                            <small className="text-muted pr-1">3 React</small>
                             <small className="text-muted">1 Comment</small>
                           </p>
                         </div>

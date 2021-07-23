@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Button, Image, Card } from "react-bootstrap";
+import { Container, Row, Col, Button, Image } from "react-bootstrap";
 
 import "../second-nav.css";
 
@@ -32,20 +32,20 @@ const NavTop = () => {
             <Col href="#home" className="d-flex mr-5 mt-2">
               <Image src="https://bit.ly/3zegycw" className="elon ml-0 mt-0" />
               <Col>
-                <span>Name</span>
-                <p className="title mt-n2">Title</p>
+                <h3 className="" style={{fontSize:"16px", marginBottom:"0px"}}>Elon Musk</h3>
+                <p className="">CEO of Tesla Motors</p>
               </Col>
             </Col>
 
-            <Button className="btn text-light rounded-pill mb-2 mt-1 open-to ml-1">
-              Open to
+            <Button variant="outline-secondary" className="btn rounded-pill mb-2 mt-2 ml-1">
+              More
             </Button>
 
-            <Button className="btn text-light rounded-pill mb-2 mt-1 open-to ml-1">
-              Open to
+            <Button variant="outline-secondary" className="btn rounded-pill mb-2 mt-2 ml-1">
+              Add Section
             </Button>
 
-            <Button className="btn text-light rounded-pill mb-2 mt-1 open-to ml-1">
+            <Button className="btn text-light rounded-pill mb-2 mt-2 open-to ml-1">
               Open to
             </Button>
           </Row>
