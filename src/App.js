@@ -17,7 +17,6 @@ function App() {
   const [signInError, setSignInError] = useState(false)
   
   const fetchUser = async (e, userSignInData) => {
-    console.log("user sign in fetch")
     e.preventDefault()
     let APIKEY = `Bearer ${userSignInData.API}`
     try {
@@ -25,11 +24,12 @@ function App() {
         headers: { Authorization:APIKEY }
       })
       const data = await userFetch.json()
+      let allUserData = { data: data, API: userSignInData.API }
       
       if (authenticateUser(userSignInData, data) === true) {
-        setUser(data)
+        setUser(allUserData)
         setSignedIn(true)
-        localStorage.setItem("user", JSON.stringify(data))
+        localStorage.setItem("user", JSON.stringify(allUserData))
       } else {
         setUser(null)
         setSignedIn(false)
