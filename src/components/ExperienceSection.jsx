@@ -13,7 +13,7 @@ export default function ExperienceSection(props) {
   console.log('exp section debug', props.userId)
 
   useEffect(() => {
-    fetchExperiences();
+    fetchExperiences(props.userID);
   }, []);
 
   if (experiences === null) {
@@ -25,8 +25,7 @@ export default function ExperienceSection(props) {
         <Card.Body>
           <div className="profile-section-header-container">
             <h5 className="profile-body-section-title my-2">Experience</h5>
-
-            <AddDataButton />
+            { props.editCapability && <AddDataButton /> }
           </div>
 
           { showMore ? (experiences && <>{ experiences.map((exp) => (
@@ -45,8 +44,7 @@ export default function ExperienceSection(props) {
     );
   }
 
-  async function fetchExperiences() {
-    const userId = "60f53b250efe7800155c34a0";
+  async function fetchExperiences(userId) {
     try {
       const fetchExp = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
