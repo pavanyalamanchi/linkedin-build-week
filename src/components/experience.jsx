@@ -51,8 +51,13 @@ const formatDate = (dateString) => {
   );
 }
 
-const formatDate = (dateString) => {
-  const options = { year: "numeric", month: "long", day: "numeric" }
-  return new Date(dateString).toLocaleDateString(undefined, options)
+function convertDateToString(start, end) {
+  console.log(start);
+  console.log(end);
+  if (end === null) {
+    return start + " - Present";
+  } else {
+    return start + " - " + end;
+  }
 }
 
