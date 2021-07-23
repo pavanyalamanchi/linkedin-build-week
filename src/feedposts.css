@@ -78,7 +78,16 @@ a {
   margin: 0 5px !important;
 }
 
+.user-post {
+  line-height: 16px;
+}
 
+.user-post-image {
+  margin: 10px 0;
+  border-radius: 3px;
+  overflow: hidden;
+  object-fit: cover;
+}
 
 
 
