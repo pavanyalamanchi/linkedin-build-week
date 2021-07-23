@@ -22,6 +22,7 @@ const CenteredModal = (props) => {
 
   // }, [])
   const fetchPost = async (e) => {
+
     e.preventDefault();
     try {
       const response = await fetch(

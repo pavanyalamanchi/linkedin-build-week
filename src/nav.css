@@ -44,6 +44,8 @@ body {
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  margin-top: 22px;
+  margin-right: 5px;
 }
 .vl {
   border-left: 1px solid gray;
@@ -103,7 +105,7 @@ span {
   position: relative;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 18px;
 }
 
 .in {
@@ -116,12 +118,6 @@ span {
   width: 55px;
   background-color: #f3f2ee;
   color: white;
-}
-.elon {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  margin-top: 20px;
 }
 .vl {
   border-left: 1px solid gray;
