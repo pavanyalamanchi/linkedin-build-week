@@ -136,11 +136,11 @@ const MainSection = () => {
               </div>
               <Row>
                 <Col>
-                  <div className="card mb-3 activity-border">
+                  <div className="card mb-3 activity mt-2">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img activity-image"
+                          className="activity-image"
                           variant="top"
                           src={cover}
                         />
@@ -159,11 +159,11 @@ const MainSection = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="card mb-3 activity-border">
+                  <div className="card mb-3 activity">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img activity-image"
+                          className="activity-image"
                           variant="top"
                           src={cover}
                         />
@@ -184,11 +184,11 @@ const MainSection = () => {
                   </div>
                 </Col>
                 <Col>
-                  <div className="card mb-3 activity-border">
+                  <div className="card mb-3 activity">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img activity-image"
+                          className="activity-image"
                           variant="top"
                           src={cover}
                         />
@@ -207,11 +207,11 @@ const MainSection = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="card mb-3 activity-border">
+                  <div className="card mb-3 activity">
                     <div className="row no-gutters">
                       <div className="col-md-2">
                         <Card.Img
-                          className="cover-img activity-image"
+                          className="activity-image"
                           variant="top"
                           src={cover}
                         />
@@ -232,15 +232,13 @@ const MainSection = () => {
                   </div>
                 </Col>
               </Row>
-              <Button
-                href="#"
-                variant="light"
-                size="lg"
-                style={{ width: "100%" }}
-              >
-                <p>See all activity</p>
-              </Button>
+            
             </Card.Body>
+            <a href="">
+              <Card.Footer className="text-center card-footer text-muted text-decoration-none font-weight-bold">
+              See all activity
+              </Card.Footer>
+            </a>
           </Card>
           
           <Card>
