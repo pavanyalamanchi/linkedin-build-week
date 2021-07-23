@@ -39,9 +39,9 @@ function App() {
           <Route exact path="/signin" render={(routerProps) => (
             <SignIn fetchUser={userSignIn} {...routerProps} />
           )} />
-          <Route exact path="/profile/:id" render={routerProps => {
+          <Route exact path="/profile/:id" render={routerProps => (
             <ProfileSection {...routerProps} user={user}/> 
-          }} />
+          )} />
           <Route exact path="/" render={(routerProps) => <FeedMain user={user}/> } />
           <Route exact path="/home" component={<FeedMain user={user}/>} />
           <Route exact path="/feed" render={(routerProps) => <FeedMain user={user}/> } />          
