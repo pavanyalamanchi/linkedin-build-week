@@ -156,7 +156,8 @@ const MainSection = () => {
           </Card>
           
           <Card>
-            <ExperienceSection editCapability={true}/>
+            { profileData && <ExperienceSection userId={profileData._id} />}
+            {console.log('me section debug',profileData._id)}
           </Card>
           
         </Col>
