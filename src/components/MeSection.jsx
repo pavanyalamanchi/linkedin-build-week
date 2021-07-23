@@ -5,33 +5,36 @@ import Sidebar from "./Sidebar";
 import ProfileEdit from "./ProfileEdit";
 import ExperienceSection from './ExperienceSection'
 import cover from "../assets/cover.jpg";
+import ProfileImage from './ProfileImage'
 
 const MainSection = () => {
   const [profileData, setProfileData] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        let response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/profile/me",
-          {
-            headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
-            },
-          }
-        );
-        if (response.ok) {
-          let resp = await response.json();
-          setProfileData(resp);
-          console.log("fetch", resp);
-        } else {
+  const fetchData = async () => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/me",
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+          },
         }
-      } catch (error) {}
-    };
+      );
+      if (response.ok) {
+        let resp = await response.json();
+        setProfileData(resp);
+        console.log("fetch", resp);
+      } else {
+      }
+    } catch (error) {}
+  };
+
+  useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <Container className="main-body-container">
@@ -41,15 +44,11 @@ const MainSection = () => {
             <div className="cover-image">
               <Card.Img className="cover-img" variant="top" src={cover} />
             </div>
-            <img
-              src={profileData.image}
-              alt="#"
-              className="profile-pic rounded-circle"
-            />
+            {<ProfileImage profileData={profileData} fetch={fetchData}/>}
 
             <Card.Body className="user-info-body">
               <Row className="justify-content-end">
-                  {profileData && <ProfileEdit profileData={profileData}/>}
+                  {profileData && <ProfileEdit profileData={profileData} fetch={fetchData}/>}
               </Row>
               <Row className="justify-content-space-between rows-col-md-6 rows-col-sm-12 rows-col-sx-12 ">
                 <Col>
