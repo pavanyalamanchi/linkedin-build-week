@@ -3,6 +3,12 @@ import faker from "faker";
 import EditDataButton from "./EditDataButton";
 
 export default function Experience(props) {
+
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "long", day: "numeric" }
+  return new Date(dateString).toLocaleDateString(undefined, options)
+}
+
   return (
     <>
       <div href="" className="my-3 experience-fragment-container">
@@ -20,7 +26,7 @@ export default function Experience(props) {
               {props.experienceData.role}
             </h6>
             <div className="experience-fragment-edit-container">
-              <EditDataButton e={props.experienceData} />
+              <EditDataButton e={props.experienceData} userId={props.userId} expId={props.expId}/>
             </div>
           </div>
 
@@ -29,8 +35,8 @@ export default function Experience(props) {
           </p>
           <p className="experience-fragment-text text-secondary">
             {convertDateToString(
-              props.experienceData.startDate,
-              props.experienceData.endDate
+              formatDate(props.experienceData.startDate),
+              formatDate(props.experienceData.endDate)
             )}
           </p>
           <p className="experience-fragment-text text-secondary">

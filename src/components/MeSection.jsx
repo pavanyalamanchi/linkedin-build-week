@@ -9,26 +9,28 @@ import cover from "../assets/cover.jpg";
 const MainSection = () => {
   const [profileData, setProfileData] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        let response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/profile/me",
-          {
-            headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
-            },
-          }
-        );
-        if (response.ok) {
-          let resp = await response.json();
-          setProfileData(resp);
-          console.log("fetch", resp);
-        } else {
+  const fetchData = async () => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/me",
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+          },
         }
-      } catch (error) {}
-    };
+      );
+      if (response.ok) {
+        let resp = await response.json();
+        setProfileData(resp);
+        console.log("fetch", resp);
+      } else {
+      }
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -240,7 +242,8 @@ const MainSection = () => {
           </Card>
           
           <Card>
-            <ExperienceSection />
+            { profileData && <ExperienceSection userId={profileData._id}/>}
+            {console.log('me section debug',profileData._id)}
           </Card>
           
         </Col>

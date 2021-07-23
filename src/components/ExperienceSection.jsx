@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Row, Button } from "react-bootstrap";
 import Experience from "./Experience";
 import Loading from "./Loading";
 import AddDataButton from "./AddDataButton";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 
 export default function ExperienceSection(props) {
   const [experiences, setExperiences] = useState(null);
+  const [showMore, setShowMore] = useState(false)
+
   console.log("Should be null?", experiences);
+  console.log('exp section debug', props.userId)
 
   useEffect(() => {
     fetchExperiences();
@@ -25,9 +29,17 @@ export default function ExperienceSection(props) {
             <AddDataButton />
           </div>
 
-          {experiences.map((exp) => (
-            <Experience experienceData={exp} />
-          ))}
+          { showMore ? (experiences && <>{ experiences.map((exp) => (
+            <Experience experienceData={exp} userId={props.userId} expId={exp._id}/>
+         ))} </>)  : (experiences && <>{ experiences.slice(0,3).map((exp) => (
+          <Experience experienceData={exp} userId={props.userId} expId={exp._id}/>
+       ))} </>) }
+          <Row>
+            <Button className='btn-custom w-100 text-muted d-flex' onClick={() => {setShowMore(!showMore)}}>
+          {showMore ? <>show less<span><MdKeyboardArrowUp className='arrow d-flex' size='1x'/></span></> : <> show more<span><MdKeyboardArrowDown className='arrow d-flex' size='1x'/></span> </>}
+              
+            </Button>
+          </Row>
         </Card.Body>
       </div>
     );
