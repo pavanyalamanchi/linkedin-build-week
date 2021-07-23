@@ -26,7 +26,7 @@ const formatDate = (dateString) => {
               {props.experienceData.role}
             </h6>
             <div className="experience-fragment-edit-container">
-              <EditDataButton e={props.experienceData} userId={props.userId} expId={props.expId}/>
+              { props.editCapability && <EditDataButton e={props.experienceData} userId={props.userId} expId={props.expId}/> }
             </div>
           </div>
 
@@ -34,10 +34,10 @@ const formatDate = (dateString) => {
             {props.experienceData.company}
           </p>
           <p className="experience-fragment-text text-secondary">
-            {convertDateToString(
+            {
               formatDate(props.experienceData.startDate),
               formatDate(props.experienceData.endDate)
-            )}
+            }
           </p>
           <p className="experience-fragment-text text-secondary">
             {props.experienceData.area}
@@ -51,12 +51,8 @@ const formatDate = (dateString) => {
   );
 }
 
-function convertDateToString(start, end) {
-  console.log(start);
-  console.log(end);
-  if (end === null) {
-    return start + " - Present";
-  } else {
-    return start + " - " + end;
-  }
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "long", day: "numeric" }
+  return new Date(dateString).toLocaleDateString(undefined, options)
 }
+

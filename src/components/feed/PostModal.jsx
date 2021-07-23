@@ -12,6 +12,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { AiFillPlaySquare } from "react-icons/ai";
 import { RiMessage2Line } from "react-icons/ri";
+
 const CenteredModal = (props) => {
   const [modalShow, setModalShow] = useState(false);
   // const [input, setInput] = useState("")
@@ -32,7 +33,7 @@ const CenteredModal = (props) => {
           body: JSON.stringify(comment),
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY4MDUzNzkyYmIyNTAwMTUyMDY2OWQiLCJpYXQiOjE2MjY4NjcwMDAsImV4cCI6MTYyODA3NjYwMH0.DKVxpbPFVahJvK5Du66xAuth2QV63fVIq7DutbHu51o",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
             "Content-Type": "application/json",
           },
         }

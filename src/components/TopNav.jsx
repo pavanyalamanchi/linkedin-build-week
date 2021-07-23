@@ -64,7 +64,7 @@ import {
                     <Nav.Link href="#features">
                       <BsFillPeopleFill className="nav-icon" />
                       <br />
-                      <span>My Network</span>
+                      <span className='span-width'>My Network</span>
                     </Nav.Link>
                     <Nav.Link href="#pricing">
                       <MdWork className="nav-icon" />
@@ -99,7 +99,7 @@ import {
                     <span>Work</span>
                   </Nav.Link>
                   <p className="premium d-none d-lg-block">
-                    Try Premium Free <br /> For 1 Month
+                    Try Premium Free
                   </p>
                 </Navbar>
               </Container>
