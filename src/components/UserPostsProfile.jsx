@@ -1,9 +1,7 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 
 export default function UserPostsProfile (props) {
-  
-  
-  
 	return (
 		<div className="card mb-3 activity-border">
       <div className="row no-gutters">
@@ -11,7 +9,8 @@ export default function UserPostsProfile (props) {
           <Card.Img
             className="cover-img activity-image"
             variant="top"
-            src={cover}
+            src=""
+            alt="x"
           />
         </div>
         <div className="col-md-10">
