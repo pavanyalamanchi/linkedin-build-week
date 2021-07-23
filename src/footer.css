@@ -277,11 +277,12 @@ hr {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding-left: 5px;
 }
 
 .sidebarFooter li {
     display: flex;
-    margin: 0.4rem 0.8rem;
+    margin: 0rem 0.5rem;
 }
 
 .sidebarFooter li a {
