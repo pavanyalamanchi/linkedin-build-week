@@ -9,8 +9,8 @@ export default function UserPostsProfile (props) {
           <Card.Img
             className="cover-img activity-image"
             variant="top"
-            src=""
-            alt="x"
+            src={""}
+            alt="X"
           />
         </div>
         <div className="col-md-10">
