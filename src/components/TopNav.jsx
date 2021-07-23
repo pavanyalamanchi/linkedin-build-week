@@ -11,23 +11,41 @@ import {
   import { SiLinkedin } from "react-icons/si";
   import { TiHome, TiMessageTyping } from "react-icons/ti";
   import { BsFillPeopleFill, BsThreeDots } from "react-icons/bs";
+  import {FaSearch} from 'react-icons/fa'
   import { IoNotificationsSharp } from "react-icons/io5";
   import { RiDashboardFill } from "react-icons/ri";
   import { MdWork } from "react-icons/md";
   import "../nav.css";
+  import { useEffect, useState } from "react";
   
   const TopNav = () => {
+    const [scrolled,setScrolled]=useState(false);
+    const handleScroll=() => {
+        const offset=window.scrollY;
+        if(offset > 200 ){
+          setScrolled(true);
+        }
+        else{
+          setScrolled(false);
+        }
+      }
+    
+      useEffect(() => {
+        window.addEventListener('scroll',handleScroll)
+      })
+
     return (
       <>
-        <Container fluid className="bg-white">
+        <Container fluid className={`bg-white ${scrolled ? 'scrolled' : ''}`}>
           <Row>
             <Col>
-              <Container className="mt-n2">
-                <Navbar className="nav-contain">
-                  <Navbar.Brand href="/feed">
+              <Container className="mt-n2 d-flex">
+                <Navbar className={`nav-contain`} >
+                  <Navbar.Brand href="/feed" className="d-sm-fill pt-3">
                     <SiLinkedin className="in" />
                   </Navbar.Brand>
-                  <Form inline className="d-none d-sm-block">
+                  
+                  <Form inline className="d-none d-sm-block pt-2">
                     <FormControl
                       type="text"
                       placeholder="Search"
@@ -35,6 +53,9 @@ import {
                     />
                   </Form>
                   <Nav className="">
+                    <Nav.Link href="/feed" className="d-block d-sm-none">
+                    <FaSearch className="nav-icon hm"/>
+                    </Nav.Link>
                     <Nav.Link href="/feed">
                       <TiHome className="nav-icon hm" />
                       <br />
@@ -60,22 +81,24 @@ import {
                       <br />
                       <span>Notification</span>
                     </Nav.Link>
-                    <Nav.Link href="#pricing" className="d-block d-sm-none">
+                    <Nav.Link href="#pricing" className="d-block d-sm-none" style={{paddingTop: "25px"}}>
                       <BsThreeDots />
                       <span>more</span>
                     </Nav.Link>
-                    <Image
-                      src="https://bit.ly/3zegycw"
-                      className="elon d-none d-sm-block"
-                    />
+                    <Nav.Link href="/me" className="">
+                    <Image src="https://bit.ly/3zegycw" style={{height: "25px", width:"25px"}} className="rounded-circle d-none d-sm-block"/>
+                    <br />
+                    <span>Me</span>
+                   </Nav.Link>
+                   
                   </Nav>
-                  <div className="vl ml-1 d-none d-sm-block"></div>
-                  <Nav.Link href="#pricing" className="d-none d-sm-block" style={{ color: "gray" }}>
+                  <div className="vl ml-1 d-none d-lg-block"></div>
+                  <Nav.Link href="#pricing" className="d-none d-lg-block" style={{ color: "gray" }}>
                     <RiDashboardFill className="nav-icon" />
                     <br />
                     <span>Work</span>
                   </Nav.Link>
-                  <p className="premium d-none d-sm-block">
+                  <p className="premium d-none d-lg-block">
                     Try Premium Free <br /> For 1 Month
                   </p>
                 </Navbar>

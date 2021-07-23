@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import MeSection from './components/MeSection'
-import Footer from './components/Footer'
 import TopNav from './components/TopNav'
 import ProfileSection from './components/ProfileSection'
 import FeedMain from './components/feed/FeedMain'
 import SignIn from './components/SignIn'
+
 
 function App() {
   let [user, setUser] = useState(null)
@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/home" component={<FeedMain user={user}/>} />
           <Route exact path="/feed" render={(routerProps) => <FeedMain user={user}/> } />          
           <Route exact path="/me" render={(routerProps) => <MeSection user={user}/> } />
-          <Footer />
+         
         </div>
       </Router>
     </>

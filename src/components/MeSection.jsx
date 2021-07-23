@@ -6,6 +6,9 @@ import ProfileEdit from "./ProfileEdit";
 import ExperienceSection from './ExperienceSection'
 import cover from "../assets/cover.jpg";
 import ProfileImage from './ProfileImage'
+import NavTop from './NavTop'
+import Footer from './Footer'
+
 
 const MainSection = () => {
   const [profileData, setProfileData] = useState("");
@@ -37,6 +40,8 @@ const MainSection = () => {
 
 
   return (
+    <>
+    <NavTop />
     <Container className="main-body-container">
       <Row className="justify-content-center">
         <Col sm={8} className="user-info mt-2">
@@ -251,6 +256,8 @@ const MainSection = () => {
       </Row>
       <Row className="justify-content-center"></Row>
     </Container>
+    <Footer />
+    </>
   );
 };
 

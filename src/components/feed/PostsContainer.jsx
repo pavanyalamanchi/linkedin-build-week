@@ -56,7 +56,7 @@ class PostsContainer extends Component {
         {this.state.display &&
           this.state.posts
             .slice(this.state.posts.length - 10, this.state.posts.length)
-            .map((p) => <SinglePost user={p.user} post={p} />)}
+            .reverse().map((p) => <SinglePost user={p.user} post={p} />)}
       </div>
     );
   }
