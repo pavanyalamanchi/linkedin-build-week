@@ -2,7 +2,6 @@ import Modal from "react-bootstrap/Modal";
 import AddForm from "./AddForm";
 import { FiPlus } from "react-icons/fi";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 
 export default function AddExperience(props) {
   let [show, setShow] = useState(false);
@@ -31,15 +30,12 @@ export default function AddExperience(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Update experience
+            Add experience
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <AddForm />
         </Modal.Body>
-        <Modal.Footer className="position-absolute bottom-0">
-          <Button onClick={props.onHide}>Save</Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
