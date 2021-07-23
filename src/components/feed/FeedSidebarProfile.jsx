@@ -39,7 +39,7 @@ export default function FeedSidebarProfile(props) {
             />
             </div>
             <Card.Body className="leftSidebarCardBody">
-              <h3 style={{fontSize:"16px"}} className="text-center mt-3">{profileData.name} {profileData.surname}</h3>
+              <a href="./me"><h3 style={{fontSize:"16px"}} className="text-center mt-3">{profileData.name} {profileData.surname}</h3></a>
               <p className="text-center font-weight-light" >{profileData.title}</p>
               <hr></hr>
               <a href="#" className="text-muted" >
