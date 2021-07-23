@@ -8,6 +8,8 @@ import cover from "../assets/cover.jpg";
 import ProfileImage from './ProfileImage'
 import NavTop from './NavTop'
 import Footer from './Footer'
+import MeActivity from './MeActivity'
+import faker from "faker";
 
 
 const MainSection = () => {
@@ -136,100 +138,12 @@ const MainSection = () => {
               </div>
               <Row>
                 <Col>
-                  <div className="card mb-3 activity mt-2">
-                    <div className="row no-gutters">
-                      <div className="col-md-2">
-                        <Card.Img
-                          className="activity-image"
-                          variant="top"
-                          src={cover}
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <div className="card-body">
-                          <h5 className="activity-body-header">
-                            Simulation gear reducer
-                          </h5>
-                          <p className="card-text">Elon Musk shared this </p>
-                          <p className="card-text">
-                            <small className="text-muted pr-1">3 React</small>
-                            <small className="text-muted">1 Comment</small>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card mb-3 activity">
-                    <div className="row no-gutters">
-                      <div className="col-md-2">
-                        <Card.Img
-                          className="activity-image"
-                          variant="top"
-                          src={cover}
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <div className="card-body">
-                          <h5 className="activity-body-header">
-                            Simulation gear reducer
-                          </h5>
-                          <p className="card-text">Elon Musk shared this </p>
-                          <p className="card-text">
-                            <small className="text-muted pr-1">3 React</small>
-                            <small className="text-muted">1 Comment</small>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 <MeActivity randomimage={faker.image.image()}/>
+                 <MeActivity randomimage={faker.image.business()}/>
                 </Col>
                 <Col>
-                  <div className="card mb-3 activity">
-                    <div className="row no-gutters">
-                      <div className="col-md-2">
-                        <Card.Img
-                          className="activity-image"
-                          variant="top"
-                          src={cover}
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <div className="card-body">
-                          <h5 className="activity-body-header">
-                            Simulation gear reducer
-                          </h5>
-                          <p className="card-text">Elon Musk shared this</p>
-                          <p className="card-text">
-                            <small className="text-muted pr-1">3 React</small>
-                            <small className="text-muted">1 Comment</small>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card mb-3 activity">
-                    <div className="row no-gutters">
-                      <div className="col-md-2">
-                        <Card.Img
-                          className="activity-image"
-                          variant="top"
-                          src={cover}
-                        />
-                      </div>
-                      <div className="col-md-10">
-                        <div className="card-body">
-                          <h5 className="activity-body-header">
-                            Simulation gear reducer
-                          </h5>
-                          <p className="card-text">Elon Musk shared this </p>
-                          <p className="card-text">
-                            <small className="text-muted pr-1">3 React</small>
-                            <small className="text-muted">1 Comment</small>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 <MeActivity randomimage={faker.image.animals()}/>
+                 <MeActivity randomimage={faker.image.food()}/>
                 </Col>
               </Row>
             
@@ -242,8 +156,7 @@ const MainSection = () => {
           </Card>
           
           <Card>
-            { profileData && <ExperienceSection userId={profileData._id}/>}
-            {console.log('me section debug',profileData._id)}
+            <ExperienceSection />
           </Card>
           
         </Col>
