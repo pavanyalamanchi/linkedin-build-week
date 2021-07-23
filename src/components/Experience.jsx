@@ -25,7 +25,7 @@ export default function Experience(props) {
             {props.experienceData.company}
           </p>
           <p className="experience-fragment-text text-secondary">
-            {convertDateToString(props.experienceData.startDate, props.experienceData.endDate)} 
+            {formatDate(props.experienceData.startDate)} - {formatDate(props.experienceData.endDate)} 
           </p>
           <p className="experience-fragment-text text-secondary">
             {props.experienceData.area}
@@ -48,4 +48,9 @@ function convertDateToString (start, end) {
   } else {
     return (start + " - " + end)
   }
+}
+
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "long", day: "numeric" }
+  return new Date(dateString).toLocaleDateString(undefined, options)
 }
