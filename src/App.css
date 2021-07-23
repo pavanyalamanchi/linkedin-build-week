@@ -854,3 +854,22 @@ textarea.form-control.post-comment-textarea {
     color: #004182 !important;
     font-weight: 900;
 }
+
+.sidebar-sticky{
+    position: fixed !important;
+    top: 55px;
+    z-index: 99;
+    width: 350px;
+}
+.sidebar-sticky-footer{
+    position: fixed !important;
+    top: 275px;
+    z-index: 99;
+    width: 350px;
+}
+.sidebar-sticky-left{
+    position: fixed !important;
+    top: 55px;
+    z-index: 99;
+    width: 256px;
+}
