@@ -17,7 +17,7 @@ export default function Experience(props) {
               {props.experienceData.role}
             </h6>
             <div className="experience-fragment-edit-container">
-              <EditDataButton />
+              { props.editCapability && <EditDataButton /> }
             </div>
           </div>
           

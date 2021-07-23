@@ -21,11 +21,13 @@ export default function ExperienceSection(props) {
         <Card.Body>
           <div className="profile-section-header-container">
             <h5 className="profile-body-section-title my-2">Experience</h5>
-            <AddDataButton />
+            {
+              props.editCapability && <AddDataButton />
+            }
           </div>
 
           {experiences.map((exp) => (
-            <Experience experienceData={exp} />
+            <Experience experienceData={exp} editCapability={props.editCapability}/>
           ))}
         </Card.Body>
       </div>

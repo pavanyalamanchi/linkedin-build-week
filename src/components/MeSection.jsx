@@ -239,7 +239,7 @@ const MainSection = () => {
           </Card>
           
           <Card>
-            <ExperienceSection />
+            <ExperienceSection editCapability={true}/>
           </Card>
           
         </Col>
