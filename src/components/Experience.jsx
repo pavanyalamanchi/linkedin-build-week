@@ -34,10 +34,10 @@ const formatDate = (dateString) => {
             {props.experienceData.company}
           </p>
           <p className="experience-fragment-text text-secondary">
-            {
+            {convertDateToString(
               formatDate(props.experienceData.startDate),
               formatDate(props.experienceData.endDate)
-            }
+            )}
           </p>
           <p className="experience-fragment-text text-secondary">
             {props.experienceData.area}
