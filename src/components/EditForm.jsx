@@ -23,7 +23,7 @@ const AddForm = (props) => {
           }
       })
       if(response.ok){
-          alert('Data Updated!')
+          
       }
       else{
           console.log(response.status)
@@ -42,7 +42,7 @@ const deleteData = async () => {
           }
       })
       if(response.ok){
-          alert('Data Deleted!')
+          
       }
       else{
           console.log(response.status)
