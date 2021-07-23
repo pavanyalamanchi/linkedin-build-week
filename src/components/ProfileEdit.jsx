@@ -53,7 +53,7 @@ const submitData = async () => {
         <Modal.Header closeButton className='modal-header'>
           <Modal.Title className="modal-title">Edit Intro</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='upload-body'>
           <Form className='edit-form'>
             <Row>
               <Col className="col-lg-6">

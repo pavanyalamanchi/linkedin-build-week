@@ -50,7 +50,7 @@ const ProfileImage = (props) => {
               <MdModeEdit className="mb-1 ml-1" size="1x" />
               <span className="mb-0 text-white footer-span ml-1">Edit</span>
             </Col>
-            <ProfileImageUpload profileData={props.profileData}/>
+            <ProfileImageUpload profileData={props.profileData} fetch={props.fetch}/>
             <Col className="flex-column mb-0 modal-edit col-3 d-flex second-svg  justify-content-center mr-auto">
             <BiPhotoAlbum className="mb-1 ml-1 mt-1" size="1x"/>
             <span className="mb-0 text-white footer-span ml-1">Frames</span>
