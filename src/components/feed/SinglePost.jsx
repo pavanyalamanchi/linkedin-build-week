@@ -8,11 +8,13 @@ import faker from 'faker'
 const SinglePost = (props) => {
   const [showPost, SetShowPost] = useState(false);
   const [showComment, SetShowComment] = useState(false);
+  const userID = props.user._id
 
   return (
     <Card className="w-100">
+      {console.log("USER POST PROPS", props.user, props.post)}
       <Card.Body className="post-card">
-        <a href="/profile/1" className="post-user-info" style={{"color":"#191919"}}>
+        <a href={userID} className="post-user-info" style={{"color":"#191919"}}>
           <div className="user-icon-container">
             <img
               src={props.user.image}
@@ -27,7 +29,7 @@ const SinglePost = (props) => {
               {props.user.name + " " + props.user.surname} • <span className="text-secondary">{relatedness()}</span>
             </h6>
             <p className="post-job-descriptor text-secondary">
-              {faker.name.jobDescriptor} {faker.name.jobTitle()}
+              {props.user.title} 
             </p>
             <p className="post-job-descriptor-details text-secondary">
               {formatDate(props.post.createdAt)} • <BiWorld />
