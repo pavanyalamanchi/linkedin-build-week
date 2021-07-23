@@ -36,9 +36,19 @@ const SinglePost = (props) => {
             </p>
           </div>
         </a>
-        <p>
+        <p className="user-post">
           {props.post.text}
         </p>
+        {
+          props.post.image && (
+            <div>
+              <img
+                src={props.post.image}
+                alt="LinkedIn Image"
+                className="img-fluid user-post-image" />
+            </div>
+          )
+        }
         
         <Row className="post-buttons-container">
           <div className="post-action-container" >
