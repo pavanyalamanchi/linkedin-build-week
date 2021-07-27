@@ -26,7 +26,7 @@ const formatDate = (dateString) => {
               {props.experienceData.role}
             </h6>
             <div className="experience-fragment-edit-container">
-              { props.editCapability && <EditDataButton e={props.experienceData} userId={props.userId} expId={props.expId}/> }
+              {  <EditDataButton e={props.experienceData} userId={props.userId} expId={props.expId}/> }
             </div>
           </div>
 
