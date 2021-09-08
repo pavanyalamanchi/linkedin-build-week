@@ -11,6 +11,7 @@ const ProfileImage = (props) => {
 
   return (
     <>
+    {console.log('734628347892749',props.profileData)}
       <img
         src={props.profileData.image}
         alt="#"

@@ -12,18 +12,18 @@ import MeActivity from './MeActivity'
 import faker from "faker";
 
 
-const MainSection = () => {
+const MainSection = (props) => {
   const [profileData, setProfileData] = useState("");
 
   const fetchData = async () => {
+    const userId = "60f53b250efe7800155c34a0";
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/me",
+        `https://striveschool-api.herokuapp.com/api/profile/${userId}`,
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
-          },
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I"          },
         }
       );
       if (response.ok) {
@@ -43,6 +43,7 @@ const MainSection = () => {
 
   return (
     <>
+   { console.log('me section profile console',props)}
     <NavTop />
     <Container className="main-body-container">
       <Row className="justify-content-center">
@@ -156,6 +157,7 @@ const MainSection = () => {
           </Card>
           
           <Card>
+            {console.log('profile',profileData)}
             { profileData && <ExperienceSection userId={profileData._id} />}
             {console.log('me section debug',profileData._id)}
           </Card>
