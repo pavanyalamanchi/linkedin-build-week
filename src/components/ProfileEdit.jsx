@@ -15,13 +15,15 @@ const ProfileEdit = (props) => {
 const handleShow = () => setLgShow(true);
 
 const submitData = async () => {
+  const profileId = '6138c5f5f27aed368875d068'
     try {
-        let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/',{
+        let response = await fetch(`https://linkedin-backend-server.herokuapp.com/profile/${profileId}`,{
           method: 'PUT',
           body: JSON.stringify(headerData),
           headers: {
               'Content-Type': 'application/json',
-              Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I"          }
+              //Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I"     
+                 }
       })
       if(response.ok){
           alert('Data Updated!')

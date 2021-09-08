@@ -18,6 +18,7 @@ const CenteredModal = (props) => {
   // const [input, setInput] = useState("")
   const [comment, setComent] = useState({
     text: "",
+    profile: ""
   });
   // useEffect(() => {
 
@@ -25,16 +26,17 @@ const CenteredModal = (props) => {
   const fetchPost = async (e) => {
 
     e.preventDefault();
+    console.log(comment)
     try {
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/",
+        "https://linkedin-backend-server.herokuapp.com/post",
         {
           method: "POST",
           body: JSON.stringify(comment),
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
-            "Content-Type": "application/json",
+            // Authorization:
+            //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1M2IyNTBlZmU3ODAwMTU1YzM0YTAiLCJpYXQiOjE2MjY2ODQxOTcsImV4cCI6MTYyNzg5Mzc5N30.3ZXfLM8Xio4MkKGlFiTA42FVjeiUinuO7VDCroKKFMw",
+             "Content-Type": "application/json",
           },
         }
       );
@@ -54,6 +56,7 @@ const CenteredModal = (props) => {
   const handlePost = (key, value) => {
     setComent({
       [key]: value,
+      profile:'6138c5f5f27aed368875d068'
     });
   };
 

@@ -15,20 +15,40 @@ import faker from "faker";
 const MainSection = (props) => {
   const [profileData, setProfileData] = useState("");
 
+  // const fetchData = async () => {
+  //   const userId = "60f53b250efe7800155c34a0";
+  //   try {
+  //     let response = await fetch(
+  //       `https://striveschool-api.herokuapp.com/api/profile/${userId}`,
+  //       {
+  //         headers: {
+  //           Authorization:
+  //             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I"          },
+  //       }
+  //     );
+  //     if (response.ok) {
+  //       let resp = await response.json();
+  //       setProfileData(resp);
+  //       console.log("fetch", resp);
+  //     } else {
+  //     }
+  //   } catch (error) {}
+  // };
+
   const fetchData = async () => {
-    const userId = "60f53b250efe7800155c34a0";
+    //const userId = "60f53b250efe7800155c34a0";
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I"          },
-        }
+        `https://linkedin-backend-server.herokuapp.com/profile`,
+        // {
+        //   headers: {
+        //     Authorization:
+        //       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I"          },
+        // }
       );
       if (response.ok) {
         let resp = await response.json();
-        setProfileData(resp);
+        setProfileData(resp[0]);
         console.log("fetch", resp);
       } else {
       }

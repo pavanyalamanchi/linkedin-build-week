@@ -16,12 +16,12 @@ class PostsContainer extends Component {
     });
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts",
+        "https://linkedin-backend-server.herokuapp.com/post",
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I",
-          },
+          //   Authorization:
+          //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWU4MmIzNTgxNzAwMTVjMjI3MDMiLCJpYXQiOjE2MzExMDA5NzMsImV4cCI6MTYzMjMxMDU3M30.0oXsqtJMnQ-VviYyjhLSP4Vsr-B8wsYQFOuehjie-0I",
+           },
         }
       );
       if (response.ok) {
@@ -51,12 +51,13 @@ class PostsContainer extends Component {
   render() {
     return (
       <div className="all-posts-container">
+        {console.log('post cont',this.state.posts)}
         <hr style={{margin:"10px 0px"}} />
         {this.state.loading && <Loading />}
         {this.state.display &&
           this.state.posts
             .slice(this.state.posts.length - 10, this.state.posts.length)
-            .reverse().map((p) => <SinglePost user={p.user} post={p} />)}
+            .reverse().map((p) => <SinglePost user={p.profile} post={p} />)}
       </div>
     );
   }
